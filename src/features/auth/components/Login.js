@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 // import {
 //   increment,
 //   incrementAsync,
@@ -81,9 +82,9 @@ export function Login() {
 
           <p className="mt-10 text-center text-sm text-gray-500">
            Create Account!!{' '}
-            <a href="#" className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">
+            <Link to="/Signup" className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">
              Sign Up
-            </a>
+            </Link>
           </p>
         </div>
       </div>
