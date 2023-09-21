@@ -1,8 +1,10 @@
 import Cart from '../features/Cart/Cart'
+import Navbar from '../features/NavBar/Navbar';
 function CartPage() {
     return ( 
         <>
-        <Cart />
+        <Navbar>  <Cart /></Navbar>
+      
         </>
      );
 }
