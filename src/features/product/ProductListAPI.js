@@ -17,6 +17,15 @@ export function fetchAllProducts() {
     }
   });
 }
+export function fetchProductById(id) {
+  return new Promise(async (resolve) =>{
+    //TODO: we will not hard-code server URL here
+    const response = await fetch('http://localhost:3001/products/'+id) 
+    const data = await response.json()
+    resolve({data})
+  }
+  );
+}
 
 
 export function fetchProductsByFilter(filter, sort, pagination) {
@@ -73,3 +82,22 @@ export function fetchProductsByFilter(filter, sort, pagination) {
   });
 }
 
+export function fetchCategories() {
+  return new Promise(async (resolve,reject) =>{
+    try {
+      const response = await fetch('http://localhost:3001/categories');
+      if (!response.ok) {
+        // If the response is not ok (e.g., 404 or 500), reject the Promise
+        reject(new Error(`HTTP Error: ${response.status}`));
+        return;
+      }
+      console.log('api is detching')
+      const data = await response.json();
+      resolve({ data });
+    } catch (error) {
+      // Handle any other errors that might occur during the fetch or JSON parsing
+      reject(error);
+    }
+  }
+  );
+}
