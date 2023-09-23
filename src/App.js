@@ -9,8 +9,11 @@ import { selectLoggedInUser } from './features/auth/authSlice';
 import { fetchItemsByUserIdAsync } from './features/Cart/CartSlice';
 import PageNotFound from './pages/404';
 import OrderSuccessPage from './pages/orderSucessPage';
-import UserOrders from './features/user/components/UserOrders';
 import UserOrdersPage from './pages/UserOrderPage';
+import UserProfilePage from './pages/UserProfilePage';
+import { fetchLoggedInUserAsync } from './features/user/userSlice';
+import Logout from './features/auth/components/Logout';
+import ForgotPasswordPage from './pages/ForgotPasswordPage';
 
 
 import './App.css';
@@ -18,8 +21,7 @@ import './App.css';
 import {
   createBrowserRouter,
   RouterProvider,
-  Route,
-  Link,
+
 } from "react-router-dom";
 import CartPage from '../src/pages/cartPage';
 import ProductDetailPage from '../src/pages/ProductDetailsPage';
@@ -79,6 +81,20 @@ const router = createBrowserRouter([
     ),
   },
   {
+    path: '/profile',
+    element: (
+      <UserProfilePage></UserProfilePage>
+    ),
+  },
+  {
+    path: '/logout',
+    element: <Logout></Logout>,
+  },
+  {
+    path: '/forgot-password',
+    element: <ForgotPasswordPage></ForgotPasswordPage>,
+  },
+  {
     path: '*',
     element: (
       <PageNotFound></PageNotFound>
@@ -92,20 +108,20 @@ function App() {
   const dispatch = useDispatch();
   const user = useSelector(selectLoggedInUser);
 
-  useEffect(()=>{
-    if(user){
+  useEffect(() => {
+    if (user) {
       dispatch(fetchItemsByUserIdAsync(user.id))
+      dispatch(fetchLoggedInUserAsync(user.id))
     }
-  },[dispatch, user])
+  }, [dispatch, user])
   return (
     <div className="App">
-      
-        
-    {/* <Home /> */}
-    {/* <LoginPage></LoginPage> */}
-    <RouterProvider router={router} />
-       
-    
+
+
+     
+      <RouterProvider router={router} />
+
+
     </div>
   );
 }

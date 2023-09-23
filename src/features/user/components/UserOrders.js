@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchLoggedInUserOrderAsync, selectUserOrders } from '../userSlice';
-import { selectLoggedInUser } from '../../auth/authSlice';
+import { fetchLoggedInUserOrderAsync, selectUserInfo, selectUserOrders } from '../userSlice';
 
 export default function UserOrders() {
   const dispatch = useDispatch();
-  const user = useSelector(selectLoggedInUser);
+  const user = useSelector(selectUserInfo);
   const orders = useSelector(selectUserOrders);
-
+  const userId = user?.id; // Safe access to 'id' property
+  
   useEffect(() => {
-    dispatch(fetchLoggedInUserOrderAsync(user.id));
+    dispatch(fetchLoggedInUserOrderAsync(userId));
   }, []);
 
   return (
@@ -81,7 +81,7 @@ export default function UserOrders() {
               <p>Total Items in Cart</p>
               <p>{order.totalItems} items</p>
             </div>
-            <p className="mt-0.5 text-sm text-gray-500">
+            {/* <p className="mt-0.5 text-sm text-gray-500">
               Shipping Address :
             </p>
             <div
@@ -109,7 +109,7 @@ export default function UserOrders() {
                         {order.selectedAddress.city}
                       </p>
                     </div>
-                  </div>
+                  </div> */}
 
           </div>
         </div>
