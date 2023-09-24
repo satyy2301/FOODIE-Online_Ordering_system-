@@ -11,6 +11,7 @@ import {
   updateCartAsync,
 } from './CartSlice';
 import { selectLoggedInUser } from '../auth/authSlice';
+import { discountedPrice } from '../../app/constants';
 
 
 
@@ -21,7 +22,10 @@ export default function Cart() {
   const items = useSelector(selectItems);
   const user=useSelector(selectLoggedInUser);
   const currentOrder = useSelector(selectCurrentOrder);
-  const totalAmount = items.reduce( (amount, item) => item.price * item.quantity + amount,0);
+  const totalAmount = items.reduce(
+    (amount, item) => discountedPrice(item) * item.quantity + amount,
+    0
+  );
   const totalItems = items.reduce((total, item) => item.quantity + total, 0);
 
   const handleQuantity = (e, item) => {
