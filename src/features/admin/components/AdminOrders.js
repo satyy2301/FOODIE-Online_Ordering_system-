@@ -116,8 +116,8 @@ function AdminOrders() {
                 </tr>
               </thead>
               <tbody className="text-gray-600 text-sm font-light">
-                {orders.map((order) => (
-                  <tr className="border-b border-gray-200 hover:bg-gray-100">
+                {orders && orders.map((order) => (
+                  <tr key={order.id} className="border-b border-gray-200 hover:bg-gray-100">
                     <td className="py-3 px-6 text-left whitespace-nowrap">
                       <div className="flex items-center">
                         <div className="mr-2"></div>
@@ -125,17 +125,18 @@ function AdminOrders() {
                       </div>
                     </td>
                     <td className="py-3 px-6 text-left">
-                      {order.items.map((item) => (
-                        <div className="flex items-center">
+                      {order.items.map((item,index) => (
+                        <div key={index} className="flex items-center">
                           <div className="mr-2">
                             <img
                               className="w-6 h-6 rounded-full"
-                              src={item.thumbnail}
+                              src={item.product.thumbnail}
+                              alt={item.product.title}
                             />
                           </div>
                           <span>
-                            {item.title} - #{item.quantity} - $
-                            {discountedPrice(item)}
+                            {item.product.title} - #{item.quantity} - $
+                            {item.product.price}
                           </span>
                         </div>
                       ))}
@@ -145,18 +146,7 @@ function AdminOrders() {
                         ${order.totalAmount}
                       </div>
                     </td>
-                    {/* <td className="py-3 px-6 text-center">
-                      <div className="">
-                        <div>
-                          <strong>{order.selectedAddress.name}</strong>,
-                        </div>
-                        <div>{order.selectedAddress.street},</div>
-                        <div>{order.selectedAddress.city}, </div>
-                        <div>{order.selectedAddress.state}, </div>
-                        <div>{order.selectedAddress.pinCode}, </div>
-                        <div>{order.selectedAddress.phone}, </div>
-                      </div>
-                    </td> */}
+                   
                     <td className="py-3 px-6 text-center">
                       {order.id === editableOrderId ? (
                         <select onChange={(e) => handleUpdate(e, order)}>

@@ -12,7 +12,7 @@ export default function Logout() {
         dispatch(signOutAsync())
     })
 
-    // but useEffect runs after render, so we have to delay navigate part
+   
     return ( 
         <>
         {!user && <Navigate to='/login' replace={true}></Navigate>}

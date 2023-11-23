@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux';
 import { selectItems } from '../Cart/CartSlice';
 import { selectLoggedInUser } from '../auth/authSlice';
+import { selectUserInfo } from '../user/userSlice';
 
 const navigation = [
   { name: 'Dashboard', link: '#', user: true },
@@ -13,7 +14,10 @@ const navigation = [
   { name: 'Orders', link: '/admin/orders', admin: true },
 ];
 const userNavigation = [
-  { name: 'My Profile', link: '/profile' },]
+  { name: 'My Profile', link: '/profile' },
+  {name: 'Signout', link:'/logout'},
+{name: 'Orders', link:'/orders'}]
+  
 
 
 function classNames(...classes) {
@@ -22,11 +26,11 @@ function classNames(...classes) {
 }
 function Navbar({children}) {
   
-const user = useSelector(selectLoggedInUser);
+  const userInfo = useSelector(selectUserInfo);
   const items = useSelector(selectItems);
    
     return ( <>
-     <div className="min-h-full">
+    {userInfo &&  <div className="min-h-full">
         <Disclosure as="nav" className="bg-gray-800">
           {({ open }) => (
             <>
@@ -43,7 +47,7 @@ const user = useSelector(selectLoggedInUser);
                     <div className="hidden md:block">
                       <div className="ml-10 flex items-baseline space-x-4">
                       {navigation.map((item) =>
-                          item[user.role] ? (
+                          item[userInfo.role] ? (
                             <Link
                               key={item.name}
                               to={item.link}
@@ -86,7 +90,7 @@ const user = useSelector(selectLoggedInUser);
                           <Menu.Button className="relative flex max-w-xs items-center rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                             <span className="absolute -inset-1.5" />
                             <span className="sr-only">Open user menu</span>
-                            <img className="h-8 w-8 rounded-full" src={user.imageUrl} alt="" />
+                            <img className="h-8 w-8 rounded-full" src={userInfo.imageUrl} alt="" />
                           </Menu.Button>
                         </div>
                         <Transition
@@ -154,11 +158,11 @@ const user = useSelector(selectLoggedInUser);
                 <div className="border-t border-gray-700 pb-3 pt-4">
                   <div className="flex items-center px-5">
                     <div className="flex-shrink-0">
-                      <img className="h-10 w-10 rounded-full" src={user.imageUrl} alt="" />
+                      <img className="h-10 w-10 rounded-full" src={userInfo.imageUrl} alt="" />
                     </div>
                     <div className="ml-3">
-                      <div className="text-base font-medium leading-none text-white">{user.name}</div>
-                      <div className="text-sm font-medium leading-none text-gray-400">{user.email}</div>
+                      <div className="text-base font-medium leading-none text-white">{userInfo.name}</div>
+                      <div className="text-sm font-medium leading-none text-gray-400">{userInfo.email}</div>
                     </div>
                     <Link to="/cart"><button
                       type="button"
@@ -198,7 +202,8 @@ const user = useSelector(selectLoggedInUser);
         <main>
           <div className="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">{children}</div>
         </main>
-      </div>
+      </div> }
+    
     </> );
 }
 

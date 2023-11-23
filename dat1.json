@@ -1,0 +1,694 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "title": "Samosa",
+      "description": " A perfect blend of spiced potatoes and crisp,at our cafe.",
+      "price": 10,
+      "rating": 4.69,
+      "stock": 30,
+      "brand": "Cafe128",
+      "category": "snacks",
+      "thumbnail": "https://images.unsplash.com/photo-1601050690597-df0568f70950?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1589301773859-bb024d3ad558?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
+        "https://images.pexels.com/photos/4449068/pexels-photo-4449068.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "https://img.freepik.com/free-photo/deep-fried-samosas-dumplings-gourmet-appetizer-generated-by-ai_188544-13491.jpg?t=st=1696071226~exp=1696074826~hmac=1408dab034647aa5ee8b73b484e0f153991d260f34a52eee12a39e1e2e88a53a&w=826",
+        "https://images.unsplash.com/photo-1601050690597-df0568f70950?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Kachori-sabji",
+      "description": "North Indian snack consisting of a deep-fried, flaky pastry ball filled with a spicy mixture ",
+      "price": 20,
+      "rating": 4.44,
+      "stock": 30,
+      "brand": "Cafe128",
+      "category": "snacks",
+      "thumbnail": "https://images.unsplash.com/photo-1591465619339-60fce055bc82?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8a2FjaG9yaXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=900&q=60",
+      "images": [
+        "https://b.zmtcdn.com/data/dish_photos/0be/715ad522bcd2c40517f5f2ba393ae0be.jpg?output-format=webp",
+        "https://b.zmtcdn.com/data/dish_photos/63b/e00f5b54319e272c889eb0be18fb663b.jpg?output-format=webp",
+        "https://b.zmtcdn.com/data/dish_photos/e8a/7694d370f8ef93357abbf610afc6be8a.jpg",
+        "https://images.unsplash.com/photo-1591465619339-60fce055bc82?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8a2FjaG9yaXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=900&q=60"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Bread-Pakoda",
+      "description": "spiced potato filling between slices of bread, dipped in besan, and deep-fry until Cafe128 and crispy.",
+      "price": 15,
+      "rating": 4.09,
+      "stock": 30,
+      "brand": "Cafe128",
+      "category": "snacks",
+      "thumbnail": "https://b.zmtcdn.com/data/dish_photos/fe4/bff2d405632b5b616ee3fad324dfdfe4.jpg?output-format=webp",
+      "images": [
+        "https://b.zmtcdn.com/data/dish_photos/d88/97823d0db6cdd409ee2265a6c48e7d88.jpg?output-format=webp"
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Sandwich",
+      "description": "sandwich with slices of tomato and cucumber between soft bread, creating a refreshing meal..",
+      "price": 10,
+      "rating": 4.3,
+      "stock": 30,
+      "brand": "Cafe128",
+      "category": "snacks",
+      "thumbnail": "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80",
+      "images": [
+        "https://images.pexels.com/photos/10681098/pexels-photo-10681098.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "https://b.zmtcdn.com/data/dish_photos/224/c19495b7614681f961894439a36b8224.jpg",
+        "https://b.zmtcdn.com/data/dish_photos/bfd/cb7c2e389fe38fed32a3608830b45bfd.png",
+        "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80"
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Aloo-Patty",
+      "description": " Indian snack consisting of a spiced potato mixture encased in a Cafe128, crispy pastry shell",
+      "price": 15,
+      "rating": 4.09,
+      "stock": 30,
+      "brand": "Cafe128",
+      "category": "snacks",
+      "thumbnail": "https://b.zmtcdn.com/data/dish_photos/a09/69434165fb739f03ca69def6e031fa09.jpg?output-format=webp",
+      "images": [
+        "https://b.zmtcdn.com/data/dish_photos/453/91f379089dcb28e3359c4cfd8dd51453.jpg",
+        "https://b.zmtcdn.com/data/dish_photos/371/1e5ccd8d7d60061d5e9cbe7b435c6371.jpg?output-format=webp",
+        "https://b.zmtcdn.com/data/dish_photos/a09/69434165fb739f03ca69def6e031fa09.jpg?output-format=webp"
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Paneer Patty",
+      "description": "Indian snack consisting of a spiced paneer mixture encased in a Cafe128, crispy pastry shell",
+      "price": 20,
+      "rating": 4.57,
+      "stock": 30,
+      "brand": "Cafe128",
+      "category": "snacks",
+      "thumbnail": "https://b.zmtcdn.com/data/dish_photos/b23/855b2b74a279795577d9717373a71b23.jpg",
+      "images": [
+        "https://b.zmtcdn.com/data/dish_photos/fb7/e38e1e9e744fbe63aa21dd42e2573fb7.jpg?output-format=webp",
+        "https://b.zmtcdn.com/data/dish_photos/7a6/38c4b7174c8a15827f21d2729e8407a6.jpg?output-format=webp",
+        "https://b.zmtcdn.com/data/dish_photos/b23/855b2b74a279795577d9717373a71b23.jpg"
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Grilled Sandwich",
+      "description": " A grilled sandwich is a delightful dish made by layering various fillings like vegetables, cheese",
+      "price": 15,
+      "rating": 4.25,
+      "stock": 30,
+      "brand": "Cafe128",
+      "category": "snacks",
+      "thumbnail": "https://b.zmtcdn.com/data/dish_photos/fc7/112bf539e68ae3a2f52f356aea24bfc7.jpg?output-format=webp",
+      "images": [
+        "https://b.zmtcdn.com/data/dish_photos/fb9/3b43fb9ce82dde73ad415c262ae65fb9.jpg?output-format=webp",
+        "https://b.zmtcdn.com/data/dish_photos/e0a/26a2631e8e05694b85edbb432e5a1e0a.png?output-format=webp",
+        "https://b.zmtcdn.com/data/dish_photos/fc7/112bf539e68ae3a2f52f356aea24bfc7.jpg?output-format=webp"
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Cuttlet",
+      "description": " snack made by blending mashed vegetables, aromatic spices, and breadcrumbs, shaping them into patties",
+      "price": 10,
+      "rating": 4.43,
+      "stock": 30,
+      "brand": "Cafe128",
+      "category": "snacks",
+      "thumbnail": "https://b.zmtcdn.com/data/dish_photos/545/b65bae7f826c6b7cee8223c427f29545.jpg?output-format=webp",
+      "images": [
+        "https://b.zmtcdn.com/data/dish_photos/382/52b64433b69ea7a2f36a46778cefb382.jpg",
+        "https://b.zmtcdn.com/data/dish_photos/6d9/c8eb19d876b81e72a8b17f3e1baa16d9.jpg",
+        "https://b.zmtcdn.com/data/dish_photos/545/b65bae7f826c6b7cee8223c427f29545.jpg?output-format=webp"
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Stuff-Kulcha",
+      "description": "North Indian flatbread filled with a delectable mixture of veggies and spices",
+      "price": 25,
+      "rating": 4.54,
+      "stock": 30,
+      "brand": "Cafe128",
+      "category": "snacks",
+      "thumbnail": "https://b.zmtcdn.com/data/dish_photos/c4d/051de1acb454f825bcd62c529f757c4d.png?output-format=webp",
+      "images": [
+        "https://www.zaykakatadka.com/wp-content/uploads/2021/07/Paneer-Kulcha-Recipe.png",
+        "https://b.zmtcdn.com/data/dish_photos/045/3afadd3482713b5d46b1b9d1d095f045.jpg",
+        "https://b.zmtcdn.com/data/dish_photos/c4d/051de1acb454f825bcd62c529f757c4d.png?output-format=webp"
+      ]
+    },
+    {
+      "id": 10,
+      "title": "Stuffed-Hotdog",
+      "description": "North Indian footlong filled with a delectable mixture of veggies and spices",
+      "price": 30,
+      "rating": 4.43,
+      "stock": 30,
+      "brand": "Cafe128",
+      "category": "snacks",
+      "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQR2JRLikDuIsB7mngzmBBk9p-iE4wxgOCThw&usqp=CAU",
+      "images": [
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9I3npdcBFjcU3vsevi21aH2VpzIcfBWs_4yg8RMnXjFy9-YbD1yHpgZum3iSY8Q42cnI&usqp=CAU",
+        "https://blessmyfoodbypayal.com/wp-content/uploads/2020/05/IMG_20200523_174934-01_20200527221449047.jpg",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQR2JRLikDuIsB7mngzmBBk9p-iE4wxgOCThw&usqp=CAU"
+      ]
+    },
+    {
+      "id": 11,
+      "title": "Pav-Bhaji",
+      "description": "Pav bhaji is a beloved Indian street food consisting of a spicy, mashed vegetable curry (bhaji) served with soft pav.",
+      "price": 30,
+      "rating": 4.26,
+      "stock": 30,
+      "brand": "Cafe128",
+      "category": "snacks",
+      "thumbnail": "https://b.zmtcdn.com/data/dish_photos/38c/e19aded42d02ea1f209c44c0734ef38c.jpg?output-format=webp",
+      "images": [
+        "https://b.zmtcdn.com/data/dish_photos/cb8/df47f6fee6cb28ce6088accce527ecb8.jpg",
+        "https://b.zmtcdn.com/data/dish_photos/447/21839e59179d95600194f4f968730447.jpg?output-format=webp",
+        "https://b.zmtcdn.com/data/dish_photos/d48/db04aec9081fc0d797818f556c127d48.jpg?output-format=webp",
+        "https://b.zmtcdn.com/data/dish_photos/38c/e19aded42d02ea1f209c44c0734ef38c.jpg?output-format=webp"
+      ]
+    },
+    {
+      "id": 12,
+      "title": "Idli-Sambar",
+      "description": " South Indian dish, featuring soft, fluffy idli served with a flavorful and tangy lentil soup (sambar), ",
+      "price": 40,
+      "rating": 4,
+      "stock": 30,
+      "brand": "Cafe128",
+      "category": "snacks",
+      "thumbnail": "https://b.zmtcdn.com/data/dish_photos/630/3246d752f41c0cab48fbdb0f24261630.jpg?output-format=webp",
+      "images": [
+        "https://b.zmtcdn.com/data/dish_photos/764/76f506ec4e28b7a83b9445bf11ead764.jpg",
+        "https://b.zmtcdn.com/data/dish_photos/c39/159455545b69394b880a020e6a9c4c39.jpg",
+        "https://b.zmtcdn.com/data/dish_photos/820/0805b6eac0cba637796cfd21d9048820.jpg?output-format=webp",
+        "https://b.zmtcdn.com/data/dish_photos/630/3246d752f41c0cab48fbdb0f24261630.jpg?output-format=webp"
+      ]
+    },
+    {
+      "id": 13,
+      "title": "Parantha",
+      "description": "A parantha is a popular Indian flatbread, made by layering and folding dough with various piced vegetables",
+      "price": 30,
+      "rating": 4.59,
+      "stock": 30,
+      "brand": "Cafe128",
+      "category": "snacks",
+      "thumbnail": "https://b.zmtcdn.com/data/dish_photos/bf2/f5a2b703840230505611a95814b55bf2.jpg?output-format=webp",
+      "images": [
+        "https://b.zmtcdn.com/data/dish_photos/8bf/f52b37992b023c905d6b5565a4f408bf.jpg",
+        "https://b.zmtcdn.com/data/dish_photos/f7a/5ff3cc0e3d096e378f13267626bdbf7a.jpg?output-format=webp",
+        "https://b.zmtcdn.com/data/dish_photos/bf2/f5a2b703840230505611a95814b55bf2.jpg?output-format=webp"
+      ]
+    },
+    {
+      "id": 14,
+      "title": "Chowmein",
+      "description": "Indo-Chinese dish featuring stir-fried noodles tossed with an assortment of colorful vegetables",
+      "price": 10,
+      "rating": 4.21,
+      "stock": 30,
+      "brand": "Cafe128",
+      "category": "snacks",
+      "thumbnail": "https://b.zmtcdn.com/data/dish_photos/e1f/49034db03a37b14d79bd9c640f6bce1f.jpg",
+      "images": [
+        "https://b.zmtcdn.com/data/dish_photos/771/3362fa0d85df1858691cd0b7cf8cd771.jpg?output-format=webp",
+        "https://b.zmtcdn.com/data/dish_photos/c65/809dc0037711a465256961191876dc65.jpg",
+        "https://b.zmtcdn.com/data/dish_photos/9e7/c6ccbd737f217de646b6897c9e2ac9e7.jpg",
+        "https://b.zmtcdn.com/data/dish_photos/e1f/49034db03a37b14d79bd9c640f6bce1f.jpg"
+      ]
+    },
+    {
+      "id": 15,
+      "title": "Chai",
+      "description": "Chai is a beloved Indian beverage made by brewing black tea leaves with a blend of aromatic spices, milk, and sugar",
+      "price": 10,
+      "rating": 4.7,
+      "stock": 30,
+      "brand": "Cafe128",
+      "category": "beverages",
+      "thumbnail": "https://b.zmtcdn.com/data/dish_photos/7d6/e7770758b689474403660b11825967d6.png",
+      "images": [
+        "https://b.zmtcdn.com/data/dish_photos/cb1/bd31bc5c852d60a05b37d8d40d0eacb1.jpg",
+        "https://b.zmtcdn.com/data/dish_photos/3a2/5d18cfdaa64e0635187680d60245e3a2.jpg",
+        "https://b.zmtcdn.com/data/dish_photos/7d6/e7770758b689474403660b11825967d6.png"
+      ]
+    },
+    {
+      "id": 16,
+      "title": "Coffee",
+      "description": "brewed beverage made from roasted coffee beans, known for its invigorating and rich flavor",
+      "price": 10,
+      "rating": 4.83,
+      "stock": 30,
+      "brand": "Cafe128",
+      "category": "beverages",
+      "thumbnail": "https://b.zmtcdn.com/data/dish_photos/ce2/7f85e11c1dd040139cb5325d6ece2ce2.jpg?output-format=webp",
+      "images": [
+        "https://b.zmtcdn.com/data/dish_photos/3c5/01cf91be0ad5ee9e211d1c297c9453c5.jpg",
+        "https://b.zmtcdn.com/data/dish_photos/46e/2d586be8beab738ee963b3d15609246e.jpg",
+        "https://b.zmtcdn.com/data/dish_photos/ce2/7f85e11c1dd040139cb5325d6ece2ce2.jpg?output-format=webp"
+      ]
+    },
+    {
+      "id": 17,
+      "title": "Juices",
+      "description": "Tetrapacks of your favorite juices to quench your thirst",
+      "price": 20,
+      "rating": 4.52,
+      "stock": 30,
+      "brand": "Cafe128",
+      "category": "beverages",
+      "thumbnail": "https://5.imimg.com/data5/QC/BQ/EL/SELLER-39760089/tropicana-200ml-30pack-rs-20.jpg",
+      "images": [
+        "https://5.imimg.com/data5/QC/BQ/EL/SELLER-39760089/tropicana-200ml-30pack-rs-20.jpg",
+        "https://5.imimg.com/data5/CX/WD/GS/SELLER-75859093/200-ml-real-mixed-fruit-juice.jpg"
+      ]
+    },
+    {
+      "id": 18,
+      "title": "Appy/Frooti",
+      "description": "Dermive Oil Free Moisturizer with SPF 20 is specifically formulated with ceramides, hyaluronic acid & sunscreen.",
+      "price": 10,
+      "rating": 4.56,
+      "stock": 30,
+      "brand": "Cafe128",
+      "category": "beverages",
+      "thumbnail": "https://i.dummyjson.com/data/products/18/thumbnail.jpg",
+      "images": [
+        "https://i.dummyjson.com/data/products/18/1.jpg",
+        "https://i.dummyjson.com/data/products/18/2.jpg",
+        "https://i.dummyjson.com/data/products/18/3.jpg",
+        "https://i.dummyjson.com/data/products/18/4.jpg",
+        "https://i.dummyjson.com/data/products/18/thumbnail.jpg"
+      ]
+    },
+    {
+      "id": 19,
+      "title": "Milkshakes/ColdMilk",
+      "description": "Product name: rorec collagen hyaluronic acid white face serum riceNet weight: 15 m",
+      "price": 30,
+      "rating": 4.42,
+      "stock": 30,
+      "brand": "Cafe128",
+      "category": "beverages",
+      "thumbnail": "https://i.dummyjson.com/data/products/19/thumbnail.jpg",
+      "images": [
+        "https://i.dummyjson.com/data/products/19/1.jpg",
+        "https://i.dummyjson.com/data/products/19/2.jpg",
+        "https://i.dummyjson.com/data/products/19/3.png",
+        "https://i.dummyjson.com/data/products/19/thumbnail.jpg"
+      ]
+    },
+    {
+      "id": 20,
+      "title": "Dairy-milk",
+      "description": "The milky choclatey love.",
+      "price": 20,
+      "rating": 4.06,
+      "stock": 30,
+      "brand": "Cafe128",
+      "category": "chocolate",
+      "thumbnail": "https://i.dummyjson.com/data/products/20/thumbnail.jpg",
+      "images": [
+        "https://i.dummyjson.com/data/products/20/1.jpg",
+        "https://i.dummyjson.com/data/products/20/2.jpg",
+        "https://i.dummyjson.com/data/products/20/3.jpg",
+        "https://i.dummyjson.com/data/products/20/4.jpg",
+        "https://i.dummyjson.com/data/products/20/thumbnail.jpg"
+      ]
+    },
+    {
+      "id": 21,
+      "title": "5Stars",
+      "description": "5-Stars khaao sab bhul jaao",
+      "price": 20,
+      "rating": 4.44,
+      "stock": 30,
+      "brand": "Cafe128",
+      "category": "chocolate",
+      "thumbnail": "https://i.dummyjson.com/data/products/21/thumbnail.png",
+      "images": [
+        "https://i.dummyjson.com/data/products/21/1.png",
+        "https://i.dummyjson.com/data/products/21/2.jpg",
+        "https://i.dummyjson.com/data/products/21/3.jpg"
+      ]
+    },
+    {
+      "id": 22,
+      "title": "Corneto",
+      "description": "Cone shaped ice cream filled with crispy n creamy flavors",
+      "price": 35,
+      "rating": 4.57,
+      "stock": 30,
+      "brand": "Cafe128",
+      "category": "ice-cream",
+      "thumbnail": "https://i.dummyjson.com/data/products/22/thumbnail.jpg",
+      "images": [
+        "https://i.dummyjson.com/data/products/22/1.jpg",
+        "https://i.dummyjson.com/data/products/22/2.jpg",
+        "https://i.dummyjson.com/data/products/22/3.jpg"
+      ]
+    },
+    {
+      "id": 23,
+      "title": "ChocoBar",
+      "description": "classic frozen treat consisting of bar of vanilla ice cream, coated with a thick layer of chocolate",
+      "price": 20,
+      "rating": 4.85,
+      "stock": 30,
+      "brand": "Cafe128",
+      "category": "ice-cream",
+      "thumbnail": "https://i.dummyjson.com/data/products/23/thumbnail.jpg",
+      "images": [
+        "https://i.dummyjson.com/data/products/23/1.jpg",
+        "https://i.dummyjson.com/data/products/23/2.jpg",
+        "https://i.dummyjson.com/data/products/23/3.jpg",
+        "https://i.dummyjson.com/data/products/23/4.jpg",
+        "https://i.dummyjson.com/data/products/23/thumbnail.jpg"
+      ]
+    },
+    {
+      "id": 24,
+      "title": "Lays-Blue",
+      "description": " crispy potato chips seasoned with a blend of aromatic spices, creating a flavorful and savory taste experience.",
+      "price": 20,
+      "rating": 4.94,
+      "stock": 30,
+      "brand": "Cafe128",
+      "category": "chips",
+      "thumbnail": "https://i.dummyjson.com/data/products/24/thumbnail.jpg",
+      "images": [
+        "https://i.dummyjson.com/data/products/24/1.jpg",
+        "https://i.dummyjson.com/data/products/24/2.jpg",
+        "https://i.dummyjson.com/data/products/24/3.jpg",
+        "https://i.dummyjson.com/data/products/24/4.jpg",
+        "https://i.dummyjson.com/data/products/24/thumbnail.jpg"
+      ]
+    },
+    {
+      "id": 25,
+      "title": "Doritos",
+      "description": "Cheesy corn based Nachos that will fill your mouth with satisfaction",
+      "price": 20,
+      "rating": 4.87,
+      "stock": 30,
+      "brand": "Cafe128",
+      "category": "chips",
+      "thumbnail": "https://i.dummyjson.com/data/products/25/thumbnail.jpg",
+      "images": [
+        "https://i.dummyjson.com/data/products/25/1.png",
+        "https://i.dummyjson.com/data/products/25/2.jpg",
+        "https://i.dummyjson.com/data/products/25/3.png",
+        "https://i.dummyjson.com/data/products/25/4.jpg",
+        "https://i.dummyjson.com/data/products/25/thumbnail.jpg"
+      ]
+    },
+    {
+      "id": 26,
+      "title": "Kurkure",
+      "description": "Tedha hai par Medha hai everyones munchy choice",
+      "price": 20,
+      "rating": 4.08,
+      "stock": 30,
+      "brand": "Cafe128",
+      "category": "chips",
+      "thumbnail": "https://i.dummyjson.com/data/products/26/thumbnail.jpg",
+      "images": [
+        "https://i.dummyjson.com/data/products/26/1.jpg",
+        "https://i.dummyjson.com/data/products/26/2.jpg",
+        "https://i.dummyjson.com/data/products/26/3.jpg",
+        "https://i.dummyjson.com/data/products/26/4.jpg",
+        "https://i.dummyjson.com/data/products/26/5.jpg",
+        "https://i.dummyjson.com/data/products/26/thumbnail.jpg"
+      ]
+    },
+    {
+      "id": 27,
+      "title": "Mess-Token",
+      "description": "Enjoy our college's Annapurna Mess delicacies and fulfil your hunger",
+      "price": 80,
+      "rating": 4.41,
+      "stock": 30,
+      "brand": "Cafe128",
+      "category": "mess",
+      "thumbnail": "https://i.dummyjson.com/data/products/27/thumbnail.webp",
+      "images": [
+        "https://i.dummyjson.com/data/products/27/1.jpg",
+        "https://i.dummyjson.com/data/products/27/2.jpg",
+        "https://i.dummyjson.com/data/products/27/3.jpg",
+        "https://i.dummyjson.com/data/products/27/4.jpg",
+        "https://i.dummyjson.com/data/products/27/thumbnail.webp"
+      ]
+    },
+    {
+      "id": 28,
+      "title": "ColdDrink-20",
+      "description": "Cold Drink of your choice-Limca,Coke,Fanta etc 250ml",
+      "price": 20,
+      "rating": 4.82,
+      "stock": 30,
+      "brand": "Cafe128",
+      "category": "beverages",
+      "thumbnail": "https://i.dummyjson.com/data/products/28/thumbnail.jpg",
+      "images": [
+        "https://i.dummyjson.com/data/products/28/1.jpg",
+        "https://i.dummyjson.com/data/products/28/2.jpg",
+        "https://i.dummyjson.com/data/products/28/3.png",
+        "https://i.dummyjson.com/data/products/28/4.jpg",
+        "https://i.dummyjson.com/data/products/28/thumbnail.jpg"
+      ]
+    },
+    {
+      "id": 29,
+      "title": "ColdDrink-50",
+      "description": "Cold Drink of your choice-Limca,Coke,Fanta etc 750ml",
+      "price": 50,
+      "rating": 4.44,
+      "stock": 30,
+      "brand": "Cafe128",
+      "category": "beverages",
+      "thumbnail": "https://i.dummyjson.com/data/products/29/thumbnail.webp",
+      "images": [
+        "https://i.dummyjson.com/data/products/29/1.jpg",
+        "https://i.dummyjson.com/data/products/29/2.jpg",
+        "https://i.dummyjson.com/data/products/29/3.webp",
+        "https://i.dummyjson.com/data/products/29/4.webp",
+        "https://i.dummyjson.com/data/products/29/thumbnail.webp"
+      ]
+    },
+    {
+      "id": 30,
+      "title": "Jim-Jam",
+      "description": "Classic kid favorite biscuits filled with vanilla cream and jelly",
+      "price": 10,
+      "rating": 4.92,
+      "stock": 30,
+      "brand": "Cafe128",
+      "category": "biscuits",
+      "thumbnail": "https://i.dummyjson.com/data/products/30/thumbnail.jpg",
+      "images": [
+        "https://i.dummyjson.com/data/products/30/1.jpg",
+        "https://i.dummyjson.com/data/products/30/2.jpg",
+        "https://i.dummyjson.com/data/products/30/3.jpg",
+        "https://i.dummyjson.com/data/products/30/thumbnail.jpg"
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "value": "snacks",
+      "label": "snacks",
+      "checked": false,
+      "thumbnail": "https://i.dummyjson.com/data/products/1/thumbnail.jpg"
+    },
+    {
+      "value": "chips",
+      "label": "chips",
+      "checked": false,
+      "thumbnail": "https://i.dummyjson.com/data/products/1/thumbnail.jpg"
+    },
+    {
+      "value": "beverages",
+      "label": "beverages",
+      "checked": false,
+      "thumbnail": "https://i.dummyjson.com/data/products/1/thumbnail.jpg"
+    },
+    {
+      "value": "chocolates",
+      "label": "chocolates",
+      "checked": false,
+      "thumbnail": "https://i.dummyjson.com/data/products/1/thumbnail.jpg"
+    },
+    {
+      "value": "ice-cream",
+      "label": "ice-cream",
+      "checked": false,
+      "thumbnail": "https://i.dummyjson.com/data/products/1/thumbnail.jpg"
+    },
+    {
+      "value": "biscuits",
+      "label": "biscuits",
+      "checked": false,
+      "thumbnail": "https://i.dummyjson.com/data/products/1/thumbnail.jpg"
+    },
+    {
+      "value": "mess",
+      "label": "mess",
+      "checked": false,
+      "thumbnail": "https://i.dummyjson.com/data/products/1/thumbnail.jpg"
+    }
+  ],
+  "users": [
+    {
+      "email": "test@gmail.com",
+      "password": "Qwerty123",
+      "id": 1
+    },
+    {
+      "email": "demo@gmail.com",
+      "password": "Qwerty123",
+      "id": 2
+    },
+    {
+      "email": "arynmi02@gmail.com",
+      "password": "Codff@2003",
+      "id": 3
+    },
+    {
+      "email": "arynmi02@gmail.com",
+      "password": "Codff@2003",
+      "id": 4
+    },
+    {
+      "email": "shouryagm@gmail.com",
+      "password": "Aryan@2000",
+      "id": 5,
+      "role": "admin"
+    }
+  ],
+  "cart": [],
+  "orders": [
+    {
+      "items": [
+        {
+          "title": "Sandwich",
+          "description": "sandwich with slices of tomato and cucumber between soft bread, creating a refreshing meal..",
+          "price": 10,
+          "rating": 4.3,
+          "stock": 30,
+          "brand": "Cafe128",
+          "category": "snacks",
+          "thumbnail": "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80",
+          "images": [
+            "https://images.pexels.com/photos/10681098/pexels-photo-10681098.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "https://b.zmtcdn.com/data/dish_photos/224/c19495b7614681f961894439a36b8224.jpg",
+            "https://b.zmtcdn.com/data/dish_photos/bfd/cb7c2e389fe38fed32a3608830b45bfd.png",
+            "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80"
+          ],
+          "quantity": 2,
+          "user": 5,
+          "id": 3
+        },
+        {
+          "title": "Bread-Pakoda",
+          "description": "spiced potato filling between slices of bread, dipped in besan, and deep-fry until Cafe128 and crispy.",
+          "price": 15,
+          "rating": 4.09,
+          "stock": 30,
+          "brand": "Cafe128",
+          "category": "snacks",
+          "thumbnail": "https://b.zmtcdn.com/data/dish_photos/fe4/bff2d405632b5b616ee3fad324dfdfe4.jpg?output-format=webp",
+          "images": [
+            "https://b.zmtcdn.com/data/dish_photos/d88/97823d0db6cdd409ee2265a6c48e7d88.jpg?output-format=webp"
+          ],
+          "quantity": 1,
+          "user": 5,
+          "id": 4
+        }
+      ],
+      "totalAmount": null,
+      "totalItems": 3,
+      "user": {
+        "email": "shouryagm@gmail.com",
+        "password": "Aryan@2000",
+        "id": 5,
+        "role": "admin"
+      },
+      "status": "dispatched",
+      "id": 1
+    },
+    {
+      "items": [
+        {
+          "title": "Bread-Pakoda",
+          "description": "spiced potato filling between slices of bread, dipped in besan, and deep-fry until Cafe128 and crispy.",
+          "price": 15,
+          "rating": 4.09,
+          "stock": 30,
+          "brand": "Cafe128",
+          "category": "snacks",
+          "thumbnail": "https://b.zmtcdn.com/data/dish_photos/fe4/bff2d405632b5b616ee3fad324dfdfe4.jpg?output-format=webp",
+          "images": [
+            "https://b.zmtcdn.com/data/dish_photos/d88/97823d0db6cdd409ee2265a6c48e7d88.jpg?output-format=webp"
+          ],
+          "quantity": 1,
+          "user": 5,
+          "id": 1
+        }
+      ],
+      "totalAmount": null,
+      "totalItems": 1,
+      "user": {
+        "email": "shouryagm@gmail.com",
+        "password": "Aryan@2000",
+        "id": 5,
+        "role": "admin"
+      },
+      "status": "pending",
+      "id": 2
+    },
+    {
+      "items": [
+        {
+          "title": "Stuff-Kulcha",
+          "description": "North Indian flatbread filled with a delectable mixture of veggies and spices",
+          "price": 25,
+          "rating": 4.54,
+          "stock": 30,
+          "brand": "Cafe128",
+          "category": "snacks",
+          "thumbnail": "https://b.zmtcdn.com/data/dish_photos/c4d/051de1acb454f825bcd62c529f757c4d.png?output-format=webp",
+          "images": [
+            "https://www.zaykakatadka.com/wp-content/uploads/2021/07/Paneer-Kulcha-Recipe.png",
+            "https://b.zmtcdn.com/data/dish_photos/045/3afadd3482713b5d46b1b9d1d095f045.jpg",
+            "https://b.zmtcdn.com/data/dish_photos/c4d/051de1acb454f825bcd62c529f757c4d.png?output-format=webp"
+          ],
+          "quantity": 2,
+          "user": 5,
+          "id": 1
+        }
+      ],
+      "totalAmount": null,
+      "totalItems": 2,
+      "user": {
+        "email": "shouryagm@gmail.com",
+        "password": "Aryan@2000",
+        "id": 5,
+        "role": "admin"
+      },
+      "status": "pending",
+      "id": 3
+    }
+  ]
+}

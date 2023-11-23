@@ -86,7 +86,7 @@ function ProductForm() {
         } else {
           dispatch(createProductAsync(product));
           reset();
-          //TODO:  on product successfully added clear fields and show a message
+        
         }
       })}
     >
@@ -141,27 +141,6 @@ function ProductForm() {
               </p>
             </div>
 
-            {/* <div className="col-span-full">
-              <label
-                htmlFor="brand"
-                className="block text-sm font-medium leading-6 text-gray-900"
-              >
-                Brand
-              </label>
-              <div className="mt-2">
-                <select
-                  {...register('brand', {
-                    required: 'brand is required',
-                  })}
-                >
-                  <option value="">--choose brand--</option>
-                  {brands.map((brand) => (
-                    <option value={brand.value}>{brand.label}</option>
-                  ))}
-                </select>
-              </div>
-            </div> */}
-
             <div className="col-span-full">
               <label
                 htmlFor="category"
@@ -177,7 +156,7 @@ function ProductForm() {
                 >
                   <option value="">--choose category--</option>
                   {categories.map((category) => (
-                    <option value={category.value}>{category.label}</option>
+                    <option key={category.value} value={category.value}>{category.label}</option>
                   ))}
                 </select>
               </div>

@@ -98,14 +98,6 @@ const router = createBrowserRouter([
       </Protected>
     ),
   },
-  // {
-  //   path: '/checkout',
-  //   element: (
-  //     <Protected>
-  //       <Checkout></Checkout>
-  //     </Protected>
-  //   ),
-  // },
   {
     path: '/product-detail/:id',
     element: (
@@ -117,20 +109,23 @@ const router = createBrowserRouter([
   {
     path: '/order-success/:id',
     element: (
-      <OrderSuccessPage></OrderSuccessPage>
+      <Protected>
+         <OrderSuccessPage></OrderSuccessPage>
+      </Protected>
+     
     ),
   },
   {
     path: '/orders',
     element: (
-      <UserOrdersPage></UserOrdersPage>
-      // we will add Page later right now using component directly.
+     <Protected> <UserOrdersPage></UserOrdersPage></Protected>
+      
     ),
   },
   {
     path: '/profile',
     element: (
-      <UserProfilePage></UserProfilePage>
+      <Protected><UserProfilePage></UserProfilePage></Protected>
     ),
   },
   {
@@ -157,8 +152,8 @@ function App() {
 
   useEffect(() => {
     if (user) {
-      dispatch(fetchItemsByUserIdAsync(user.id))
-      dispatch(fetchLoggedInUserAsync(user.id))
+      dispatch(fetchItemsByUserIdAsync())
+      dispatch(fetchLoggedInUserAsync())
     }
   }, [dispatch, user])
   return (
