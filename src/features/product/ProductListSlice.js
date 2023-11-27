@@ -12,6 +12,7 @@ const initialState = {
   status: 'idle',
   totalItems:0,
   categories:[],
+  totalCategories:0,
   selectedProduct:null
 };
 
@@ -33,7 +34,7 @@ export const updateProductAsync = createAsyncThunk(
 export const fetchCategoriesAsync = createAsyncThunk(
   'product/fetchCategories',
   async () => {
-    console.log('slice is calling api')
+   
     const response = await fetchCategories();
     return response.data;
   }
@@ -79,7 +80,8 @@ export const productSlice = createSlice({
       })
       .addCase(fetchCategoriesAsync.fulfilled, (state, action) => {
         state.status = 'idle';
-        state.categories = action.payload;
+        state.categories = action.payload.categories;
+        state.totalCategories=action.payload.totalcategories
       })
       .addCase(fetchProductByIdAsync.pending, (state) => {
         state.status = 'loading';
@@ -115,5 +117,6 @@ export const selectAllProducts = (state) => state.product.products;
 export const selectCategories = (state) => state.product.categories;
 export const selectTotalItems = (state) => state.product.totalItems;
 export const selectProductById = (state) => state.product.selectedProduct;
+export const selectTotalCategories = (state) => state.product.totalCategories
 
 export default productSlice.reducer;

@@ -1,21 +1,63 @@
 import { useEffect } from "react";
 import { Link, Navigate, useParams } from "react-router-dom";
-import { resetCartAsync } from "../features/Cart/CartSlice";
+import { resetCartAsync, selectItems } from "../features/Cart/CartSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { selectLoggedInUser } from "../features/auth/authSlice";
-import { resetOrder } from "../features/order/orderSlice";
+import { resetOrder, selectCurrentOrder } from "../features/order/orderSlice";
+import { updateProduct } from "../features/product/ProductListAPI";
+import { updateUserAsync } from "../features/user/userSlice";
+import { updateProductAsync } from "../features/product/ProductListSlice";
 
 function OrderSuccessPage() {
    const params = useParams() 
    const dispatch = useDispatch();
+   const user=useSelector(selectLoggedInUser);
+   const items=useSelector(selectItems);
+   const currentOrder=useSelector(selectCurrentOrder);
+   console.log('currentorder',currentOrder)
+
+   
    //const user = useSelector(selectLoggedInUser);
 
-   useEffect(()=>{
-    // reset cart
-    dispatch(resetCartAsync())
-    // reset currentOrder
-    dispatch(resetOrder())
-   },[dispatch])
+   useEffect(() => {
+    for (let item of items) {
+      
+  
+      // Create a new object or clone the existing one
+      const newProduct = { ...item.product };
+  
+      // Update properties on the new object
+      console.log('initial stock', newProduct.stock);
+      newProduct.stock -= item.quantity;
+      newProduct.sale = newProduct.sale+item.quantity;
+  
+      console.log('final stock and sale', newProduct.stock, newProduct.sale);
+  
+      // Dispatch the updateProduct action with the new object
+      dispatch(updateProductAsync(newProduct));
+    }
+  
+    // Create a new user object or clone the existing one
+    const newUser = { ...user };
+    newUser.points = newUser.points || 0;
+
+  // Update user.points
+     newUser.points += currentOrder.totalAmount;
+    
+  
+    console.log(newUser);
+    console.log('totalamt',currentOrder.total);
+  
+    // Dispatch the updateUserAsync action with the new user object
+    dispatch(updateUserAsync(newUser));
+  
+    // Dispatch the resetCartAsync action
+    dispatch(resetCartAsync(user.id));
+  
+    
+    dispatch(resetOrder(user.id));
+  }, [dispatch]);
+  
 
   return (
     <>

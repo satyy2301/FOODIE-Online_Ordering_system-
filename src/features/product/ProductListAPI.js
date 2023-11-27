@@ -100,8 +100,9 @@ export function fetchCategories() {
         return;
       }
   
-      const data = await response.json();
-      resolve({ data });
+      const data = await response.json()
+      const totalcategories = await response.headers.get('X-Total-Count')
+      resolve({ data: { categories: data, totalcategories: +totalcategories } })
     } catch (error) {
       
       reject(error);

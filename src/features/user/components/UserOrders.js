@@ -2,11 +2,14 @@ import React, { useEffect} from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchLoggedInUserOrderAsync, selectUserInfo, selectUserOrders,selectUserInfoStatus } from '../userSlice';
 import { discountedPrice } from '../../../app/constants';
+import { selectLoggedInUser } from '../../auth/authSlice';
 
 export default function UserOrders() {
   const dispatch = useDispatch();
   const status = useSelector(selectUserInfoStatus);
     const orders = useSelector(selectUserOrders);
+    const user=useSelector(selectLoggedInUser);
+    //console.log('user-info in user orders: ',user);
  // const orders=userInfo.orders;
   console.log(orders)
   
@@ -15,9 +18,9 @@ export default function UserOrders() {
 
   useEffect(() => {
     
-      dispatch(fetchLoggedInUserOrderAsync());
+      dispatch(fetchLoggedInUserOrderAsync(user.id));
     
-  }, [dispatch]);
+  }, [dispatch,user.id]);
 
   return (
     <div>

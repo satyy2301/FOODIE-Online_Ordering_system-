@@ -70,7 +70,7 @@ function AdminOrders() {
   return (
     <div className="overflow-x-auto">
       <div className="bg-gray-100 flex items-center justify-center font-sans overflow-hidden">
-        <div className="w-full">
+        <div className="w-full overflow-x-scroll">
           <div className="bg-white shadow-md rounded my-6">
             <table className="min-w-max w-full table-auto">
               <thead>
@@ -92,6 +92,29 @@ function AdminOrders() {
                         <ArrowDownIcon className="w-4 h-4 inline"></ArrowDownIcon>
                       ))}
                   </th>
+
+
+                  <th
+                    className="py-3 px-6 text-left cursor-pointer"
+                    onClick={(e) =>
+                      handleSort({
+                        sort: 'time',
+                        order: sort?._order === 'asc' ? 'desc' : 'asc',
+                      })
+                    }
+                  >
+                    Time {' '}
+                    {sort._sort === 'time' &&
+                      (sort._order === 'asc' ? (
+                        <ArrowUpIcon className="w-4 h-4 inline"></ArrowUpIcon>
+                      ) : (
+                        <ArrowDownIcon className="w-4 h-4 inline"></ArrowDownIcon>
+                      ))}
+                  </th>
+
+
+
+
                   <th className="py-3 px-6 text-left">Items</th>
                   <th
                     className="py-3 px-6 text-left cursor-pointer"
@@ -122,6 +145,12 @@ function AdminOrders() {
                       <div className="flex items-center">
                         <div className="mr-2"></div>
                         <span className="font-medium">{order.id}</span>
+                      </div>
+                    </td>
+                    <td className="py-3 px-6 text-left whitespace-nowrap">
+                      <div className="flex items-center">
+                        <div className="mr-2"></div>
+                        <span className="font-medium">{order.time}</span>
                       </div>
                     </td>
                     <td className="py-3 px-6 text-left">

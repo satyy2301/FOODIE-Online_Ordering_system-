@@ -1,0 +1,248 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&display=swap");
+
+
+
+.footer-body {
+  display: flex;
+  background: transparent;
+  justify-content: flex-end;
+  align-items: flex-end;
+  min-width: 100vh;
+
+  margin-top:60px;
+}
+
+.footer-foot {
+   font-family: "Poppins", sans-serif;
+  position: relative;
+  width: 100%;
+  background: #3586ff;
+  min-height: 100px;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+ 
+ 
+}
+
+.social-icon,
+.menu {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+  flex-wrap: wrap;
+    
+}
+
+.social-icon__item,
+.menu__item {
+  list-style: none;
+}
+
+.social-icon__link {
+  font-size: 0.5rem;
+  color: #fff;
+  margin: 0 10px;
+  display: inline-block;
+  transition: 0.5s;
+  
+}
+
+.social-icon__link:hover {
+  transform: translateY(-10px);
+}
+
+.menu__link {
+  font-size: 0.5rem;
+  color: #fff;
+  margin: 0 10px;
+  display: inline-block;
+  transition: 0.5s;
+  text-decoration: none;
+  opacity: 0.75;
+  font-weight: 400;
+
+}
+
+.menu__link:hover {
+  opacity: 1;
+}
+
+.footer-foot p {
+  color: #fff;
+  margin: 15px 0 10px 0;
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+
+.wave {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: url("https://i.ibb.co/wQZVxxk/wave.png");
+  background-size: 1000px 100px;
+}
+
+.wave#wave1 {
+  z-index: 1000;
+  opacity: 1;
+  bottom: 0;
+  animation: animateWaves 4s linear infinite;
+}
+
+.wave#wave2 {
+  z-index: 999;
+  opacity: 0.5;
+  bottom: 10px;
+  animation: animate 4s linear infinite !important;
+}
+
+.wave#wave3 {
+  z-index: 1000;
+  opacity: 0.2;
+  bottom: 15px;
+  animation: animateWaves 3s linear infinite;
+}
+
+.wave#wave4 {
+  z-index: 999;
+  opacity: 0.7;
+  bottom: 20px;
+  animation: animate-2 3s linear infinite;
+}
+
+@keyframes animateWaves {
+  0% {
+    background-position-x: 1000px;
+  }
+  100% {
+    background-positon-x: 0px;
+  }
+}
+
+@keyframes animate-2 {
+  0% {
+    background-position-x: -1000px;
+  }
+  100% {
+    background-positon-x: 0px;
+  }
+}
+
+.parent-foot {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.child-foot {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform-style: preserve-3d;
+  transition: all 0.5s ease-in-out;
+  border-radius: 50%;
+  margin: 0 5px;
+}
+
+.child-foot:hover {
+  background-color: white;
+  background-position: -100px 100px, -100px 100px;
+  transform: rotate3d(0.5, 1, 0, 30deg);
+  transform: perspective(180px) rotateX(60deg) translateY(2px);
+  box-shadow: 0px 10px 10px rgb(1, 49, 182);
+}
+
+.foot-button {
+  border: none;
+  background-color: transparent;
+  font-size: 20px;
+}
+
+.foot-button:hover {
+  width: inherit;
+  height: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translate3d(0px, 0px, 15px) perspective(180px) rotateX(-35deg) translateY(2px);
+  border-radius: 50%;
+}
+.footer-foot {
+  text-align: center;
+  padding: 2% 0;
+}
+
+.footer-foot .row-foot {
+  width: 100%;
+  margin: 1% 0;
+  padding: 1% 0;
+  color: #555; /* Adjusted color to a softer gray */
+  font-size: 1em; /* Adjusted font size for better readability */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.footer-foot .row-foot a {
+  text-decoration: none;
+  color: #000; /* Set link color to black */
+  font-size: 1.2em; /* Increased font size for links */
+  transition: color 0.5s;
+  transition: font-size 0.5s;
+}
+
+.footer-foot .row-foot a:hover {
+  color: #ffffff; /* Changed hover color to a shade of blue */
+  font-size: 1.5em;
+}
+
+.footer-foot .row-foot ul {
+  width: 100%;
+  list-style: none; /* Removed default list styles */
+  padding: 0;
+  text-align: center;
+}
+
+.footer-foot .row-foot ul li {
+  display: inline-block;
+  margin: 0 20px; /* Adjusted margin for better spacing */
+}
+
+.footer-foot .row-foot a i {
+  font-size: 1.5em; /* Adjusted icon size */
+  margin: 0 5px;
+}
+
+@media (max-width: 720px) {
+  .footer-foot {
+    text-align: center;
+    padding: 5%;
+  }
+
+  .footer-foot .row-foot ul li {
+    display: block;
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  .footer-foot .row-foot a i {
+    margin: 0 5px;
+  }
+}
+
+.footer-foot .row-foot.text-black {
+  color: #000;
+}
+

@@ -8,15 +8,18 @@ import { selectLoggedInUser } from '../auth/authSlice';
 import { selectUserInfo } from '../user/userSlice';
 
 const navigation = [
+  { name: 'Products', link: '/', user: true },
   { name: 'Dashboard', link: '#', user: true },
-  { name: 'Team', link: '#', user: true },
+  { name: 'chat', link: '/chatbot',user: true, admin:true},
   { name: 'Admin', link: '/admin', admin: true },
   { name: 'Orders', link: '/admin/orders', admin: true },
+  { name: 'Sales', link: '/admin/dash', admin: true },
+  { name: 'users', link: '/admin/users', admin: true },
 ];
 const userNavigation = [
   { name: 'My Profile', link: '/profile' },
   {name: 'Signout', link:'/logout'},
-{name: 'Orders', link:'/orders'}]
+  {name: 'Orders', link:'/orders'}]
   
 
 
@@ -200,7 +203,7 @@ function Navbar({children}) {
           </div>
         </header>
         <main>
-          <div className="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">{children}</div>
+          <div className="mx-auto max-w-7xl  sm:px-6 lg:px-8">{children}</div>
         </main>
       </div> }
     

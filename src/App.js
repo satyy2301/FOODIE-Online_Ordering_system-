@@ -19,6 +19,10 @@ import ProtectedAdmin from './features/auth/components/ProtectedAdmin';
 import AdminHome from './pages/AdminHome';
 import AdminProductDetailPage from './pages/AdminProductDetailPage';
 import AdminProductFormPage from './pages/AdminProductFormPage';
+import AdminDashboardPage from './pages/AdmindashboardPage';
+import ChatBot from './pages/chatbot';
+import AdminUserPage from './pages/AdminUserPage'
+import LandingPage from './pages/Landingpage'
 
 
 
@@ -34,11 +38,18 @@ import ProductDetailPage from '../src/pages/ProductDetailsPage';
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: '/home',
     element: (
       <Protected>
         <Home></Home>
       </Protected>
+    ),
+  },
+  {
+    path: '/',
+    element: (
+      <LandingPage></LandingPage>
+      
     ),
   },
   {
@@ -66,10 +77,26 @@ const router = createBrowserRouter([
     ),
   },
   {
+    path: '/admin/users',
+    element: (
+      <ProtectedAdmin>
+        <AdminUserPage></AdminUserPage>
+      </ProtectedAdmin>
+    ),
+  },
+  {
     path: '/admin/product-form',
     element: (
       <ProtectedAdmin>
         <AdminProductFormPage></AdminProductFormPage>
+      </ProtectedAdmin>
+    ),
+  },
+  {
+    path: '/admin/dash',
+    element: (
+      <ProtectedAdmin>
+        <AdminDashboardPage></AdminDashboardPage>
       </ProtectedAdmin>
     ),
   },
@@ -103,6 +130,14 @@ const router = createBrowserRouter([
     element: (
       <Protected>
         <ProductDetailPage></ProductDetailPage>
+      </Protected>
+    ),
+  },
+  {
+    path: '/chatbot',
+    element: (
+      <Protected>
+       <ChatBot></ChatBot>
       </Protected>
     ),
   },
@@ -152,8 +187,8 @@ function App() {
 
   useEffect(() => {
     if (user) {
-      dispatch(fetchItemsByUserIdAsync())
-      dispatch(fetchLoggedInUserAsync())
+      dispatch(fetchItemsByUserIdAsync(user.id))
+      dispatch(fetchLoggedInUserAsync(user.id))
     }
   }, [dispatch, user])
   return (

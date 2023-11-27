@@ -1,26 +1,37 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { fetchLoggedInUserOrders, updateUser, fetchLoggedInUser } from './UserAPI';
+import { fetchLoggedInUserOrders, updateUser, fetchLoggedInUser, fetchAllUsers } from './UserAPI';
 
 const initialState = {
- 
+  allUsers:[],
   status: 'idle',
   userInfo: null, 
+  totalUsers: 0,
 };
 
 export const fetchLoggedInUserOrderAsync = createAsyncThunk(
   'user/fetchLoggedInUserOrders',
-  async () => {
-    const response = await fetchLoggedInUserOrders();
+  async (id) => {
+    const response = await fetchLoggedInUserOrders(id);
    
     return response.data;
   }
 );
 
+export const fetchAllUsersAsync = createAsyncThunk(
+  'user/fetchAllUsers', 
+  async () => {
+    const response = await fetchAllUsers();
+    return response.data;
+  }
+);
+
+
+
 
 export const fetchLoggedInUserAsync = createAsyncThunk(
   'user/fetchLoggedInUser',
-  async () => {
-    const response = await fetchLoggedInUser();
+  async (id) => {
+    const response = await fetchLoggedInUser(id);
     return response.data;
   }
 );
@@ -50,6 +61,15 @@ export const userSlice = createSlice({
         state.status = 'idle';
         state.userInfo.orders = action.payload;
       })
+      .addCase(fetchAllUsersAsync.pending, (state) => {
+        state.status = 'loading';
+      })
+      .addCase(fetchAllUsersAsync.fulfilled, (state, action) => {
+        state.status = 'idle';
+        state.allUsers = action.payload.users;
+        state.totalUsers=action.payload.totalUsers;
+      })
+      
       .addCase(updateUserAsync.pending, (state) => {
         state.status = 'loading';
       })
@@ -68,8 +88,10 @@ export const userSlice = createSlice({
   },
 });
 
-export const selectUserOrders = (state)=>state.user.userInfo.userOrders;
+export const selectUserOrders = (state)=>state.user.userInfo.orders;
 export const selectUserInfo = (state)=>state.user.userInfo;
 export const selectUserInfoStatus = (state) => state.user.status;
+export const selectAllusers=(state) => state.user.allUsers;
 export const { increment } = userSlice.actions;
- export default userSlice.reducer;
+export const selecttotalusers=(state)=> state.user.totalUsers;
+export default userSlice.reducer;

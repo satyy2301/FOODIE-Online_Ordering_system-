@@ -14,7 +14,7 @@ function classNames(...classes) {
 
 export default function ProductDetails() {
 
-  // const user = useSelector(selectLoggedInUser)
+   const user = useSelector(selectLoggedInUser)
   const product = useSelector(selectProductById);
   const dispatch = useDispatch();
   const params = useParams();
@@ -28,6 +28,7 @@ export default function ProductDetails() {
       const newItem = {
         product: product.id,
         quantity: 1,
+        user:user.id
        
       };
       dispatch(addToCartAsync(newItem));

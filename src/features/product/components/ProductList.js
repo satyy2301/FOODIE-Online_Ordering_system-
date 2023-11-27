@@ -52,16 +52,7 @@ function ProductList() {
     const categories = useSelector(selectCategories)
     const user=useSelector(selectLoggedInUser)
     const items=useSelector(selectItems)
-    const filters = [
-
-        {
-            id: 'category',
-            name: 'Category',
-            // change according to database //
-            options: categories
-        },
-
-    ]
+    
 
     const [selectedCategory, setSelectedCategory] = useState(null);
 
