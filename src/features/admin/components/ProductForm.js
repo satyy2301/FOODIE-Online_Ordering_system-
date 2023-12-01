@@ -11,6 +11,7 @@ import {
 import { useForm } from 'react-hook-form';
 import { useParams } from 'react-router-dom';
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 function ProductForm() {
   const {
@@ -75,7 +76,7 @@ function ProductForm() {
         delete product['image3'];
         product.price = +product.price;
         product.stock = +product.stock;
-        product.discountPercentage = +product.discountPercentage;
+        product.expirydate = +product.expirydate;
         console.log(product);
 
         if (params.id) {
@@ -187,21 +188,20 @@ function ProductForm() {
 
             <div className="sm:col-span-2">
               <label
-                htmlFor="discountPercentage"
+                htmlFor="expirydate"
                 className="block text-sm font-medium leading-6 text-gray-900"
               >
-                Discount Percentage
+               Expiry Date
               </label>
               <div className="mt-2">
                 <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 ">
                   <input
-                    type="number"
-                    {...register('discountPercentage', {
-                      required: 'discountPercentage is required',
-                      min: 0,
-                      max: 100,
+                    type="date"
+                    {...register('expirydate', {
+                      required: 'expirydate is required',
+                      
                     })}
-                    id="discountPercentage"
+                    id="expirydate"
                     className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                   />
                 </div>
@@ -315,7 +315,7 @@ function ProductForm() {
             </div>
           </div>
         </div>
-
+{/* 
         <div className="border-b border-gray-900/10 pb-12">
           <h2 className="text-base font-semibold leading-7 text-gray-900">
             Extra{' '}
@@ -393,16 +393,20 @@ function ProductForm() {
               </div>
             </fieldset>
           </div>
-        </div>
+        </div> */}
       </div>
 
       <div className="mt-6 flex items-center justify-end gap-x-6">
+        <Link to="/home">
         <button
           type="button"
           className="text-sm font-semibold leading-6 text-gray-900"
+         
         >
           Cancel
         </button>
+        </Link>
+        
 
        {selectedProduct && <button
           onClick={handleDelete}

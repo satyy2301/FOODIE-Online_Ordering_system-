@@ -36,7 +36,7 @@ export default function ProductDetails() {
       
     } else {
 
-      // we will use alertsin UI //
+     
      console.log('item already added')
     }
   };
@@ -44,10 +44,10 @@ export default function ProductDetails() {
     dispatch(fetchProductByIdAsync(params.id));
   }, [dispatch, params.id]);
 
-  return (  <div className="bg-white">
+  return (  <div className="bg-blue rounded-5xl">
   {product && (
-    <div className="pt-6">
-      <nav aria-label="Breadcrumb">
+    <div className="pt-6 rounded-5xl">
+      {/* <nav aria-label="Breadcrumb">
         <ol
           role="list"
           className="mx-auto flex max-w-2xl items-center space-x-2 px-4 sm:px-6 lg:max-w-7xl lg:px-8"
@@ -85,10 +85,10 @@ export default function ProductDetails() {
             </a>
           </li>
         </ol>
-      </nav>
+      </nav> */}
 
       {/* Image gallery */}
-      <div className="mx-auto mt-6 max-w-2xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:px-8">
+      <div className="mx-auto mt-6 max-w-2xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:px-8 mix-blend-multiply">
         <div className="aspect-h-4 aspect-w-3 hidden overflow-hidden rounded-lg lg:block">
           <img
             src={product.images[0]}

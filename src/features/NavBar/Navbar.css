@@ -1,0 +1,511 @@
+.body{
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+
+.button {
+    --width: 100px;
+    --height: 35px;
+    --tooltip-height: 35px;
+    --tooltip-width: 90px;
+    --gap-between-tooltip-to-button: 18px;
+    --button-color: #222;
+    --tooltip-color: #fff;
+    width: var(--width);
+    height: var(--height);
+    background: var(--button-color);
+    position: relative;
+    text-align: center;
+    border-radius: 0.45em;
+    font-family: "Arial";
+    transition: background 0.3s;
+  }
+  
+  .button::before {
+    position: absolute;
+    content: attr(data-tooltip);
+    width: var(--tooltip-width);
+    height: var(--tooltip-height);
+    background-color: #555;
+    font-size: 0.9rem;
+    color: #fff;
+    border-radius: .25em;
+    line-height: var(--tooltip-height);
+    bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) + 10px);
+    left: calc(50% - var(--tooltip-width) / 2);
+  }
+  .nav__icons{
+    color: #ffffff;
+    background: black;
+    height: 20px;
+  }
+  
+  .button::after {
+    position: absolute;
+    content: '';
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-top-color: #555;
+    left: calc(50% - 10px);
+    bottom: calc(100% + var(--gap-between-tooltip-to-button) - 10px);
+  }
+  
+  .button::after,.button::before {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s;
+  }
+  
+  .text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .button-wrapper,.text,.icon {
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    color: #fff;
+  }
+  
+  .text {
+    top: 0
+  }
+  
+  .text,.icon {
+    transition: top 0.5s;
+  }
+  
+  .icon {
+    color: #fff;
+    top: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .icon svg {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .button:hover {
+    background: #222;
+  }
+  
+  .button:hover .text {
+    top: -100%;
+  }
+  
+  .button:hover .icon {
+    top: 0;
+  }
+  
+  .button:hover:before,.button:hover:after {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .button:hover:after {
+    bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) - 20px);
+  }
+  
+  .button:hover:before {
+    bottom: calc(var(--height) + var(--gap-between-tooltip-to-button));
+  }
+  
+
+  .css-3d-text {
+    font-size: 40px;
+    color: #ffc107;
+    font-family: Impact, Charcoal, sans-serif;
+    text-shadow: 0px 0px 0 rgb(243,181,0),
+                 1px 1px 0 rgb(231,169,0),
+                 2px 2px 0 rgb(220,158,0),
+                 3px 3px 0 rgb(208,146,0),
+                 4px 4px 0 rgb(196,134,0),
+                 5px 5px 0 rgb(184,122,0),
+                 6px 6px 0 rgb(173,111,0),
+                 7px 7px 0 rgb(161,99,0),
+                 8px 8px 0 rgb(149,87,0),
+                 9px 9px  0 rgb(137,75,0),
+                 10px 10px 9px rgba(0,0,0,0.99),
+                 10px 10px 1px rgba(0,0,0,0.5),
+                 0px 0px 9px rgba(0,0,0,.2);
+ }
+
+
+
+ #animation-demo {
+	width: 100%;
+	height: 150px;
+	position: relative;
+	background-color:transparent;
+  margin: 14px;
+  padding: 5px;
+	line-height: auto;
+	color: #000;
+	border: NONE;
+	text-align: center;
+  display: flex;
+  align-items: center;
+} 
+
+
+.animated {
+	-webkit-animation-duration: 1s;
+	animation-duration:1s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeInUp { 
+    0% { 
+        opacity: 0; 
+        -webkit-transform: translateY(20px); 
+    } 
+    100% { 
+        opacity: 1; 
+        -webkit-transform: translateY(0); 
+    } 
+} 
+
+@keyframes fadeInUp { 
+    0% { 
+        opacity: 0; 
+        transform: translateY(20px); 
+    } 
+    100% { 
+        opacity: 1; 
+        transform: translateY(0); 
+    } 
+} 
+
+.fadeInUp { 
+    -webkit-animation-name: fadeInUp; 
+    animation-name: fadeInUp; 
+}
+
+
+
+
+*,
+:before,
+:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container-parent {
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background:transparent;
+  width: 50%;
+}
+.text-container {
+  width: 2.5em;
+  height: 1.15em;
+  font-size: 4.5rem;
+  position: relative;
+}
+
+.text-container div {
+  position: absolute;
+  left: 0;
+  text-transform: uppercase;
+  width:50%;
+  display: block;
+  text-align: left;
+}
+
+.upper {
+  top: 0;
+  height: 52.5%;
+
+  overflow: hidden;
+  z-index: 3;
+  animation: moveUp 1.5s ease-in-out 1;
+  background: transparent;
+}
+
+.lower {
+  bottom: 0;
+  height: 100%;
+  background: transparent;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  z-index: 1;
+  animation: moveDown 1.5s ease-in-out 1;
+}
+
+.inside {
+    margin-left: 14px;
+    position: absolute;
+    top: 40%;
+    transform: translateY(-40%);
+    text-align: center;
+    z-index: 2;
+    font-size: 1rem;
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+    font-family: "Arial", sans-serif; 
+    text-transform: uppercase; 
+    letter-spacing: 2px; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+  }
+
+@keyframes moveUp {
+  0%,
+  100% {
+    top: 0;
+  }
+
+  50%,
+  70% {
+    top: -45px;
+  }
+}
+
+@keyframes moveDown {
+  0%,
+  100% {
+    top: 0;
+  }
+
+  50%,
+  70% {
+    top: 30px;
+  }
+}
+
+@media (max-width: 424px) {
+  .text-container {
+    font-size: 2.5rem;
+  }
+
+  .inside {
+    font-size: 0.75rem;
+  }
+}
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600;800&display=swap');
+
+
+.flex-home{
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  position: absolute;
+  top: 50%;
+  left: -50px;
+  transform: translate(-50%, -50%);
+}
+
+
+
+.home-button {
+  padding: 2px;
+  margin: 4px;
+  border-radius: 35px;
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  background-color: #ff0000;
+  box-shadow: 0px 4px 4px rgba(0, 0, 25, 0.2);
+}
+
+.home-button:hover {
+  background-color: #ffffff;
+}
+
+.home-button:active {
+  box-shadow: 0 3px rgba(0, 0, 25, 0.38);
+  transform: translateY(2px);
+  color: #fff;
+}
+
+.dash-board{
+  display: flex;
+  width: auto;
+  height: auto;
+}
+
+.search-box{
+  display: flex;
+  position: relative;
+}
+
+.dash-board .btn {
+  position: relative;
+  font-size: 17px;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1em 2.5em;
+  display: inline-block;
+  border-radius: 6em;
+  transition: all .2s;
+  border: none;
+  font-family: inherit;
+  font-weight: 500;
+  color: black;
+  background-color: white;
+ }
+ 
+ 
+.dash-board .btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+ }
+ 
+ 
+.dash-board .btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+ }
+ 
+ 
+.dash-board  .btn::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all .4s;
+ }
+ 
+ 
+.dash-board  .btn::after {
+  background-color: #fff;
+ }
+ 
+
+ .dash-board  .btn:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+ }
+
+ /* Style for the input container */
+.search-box input {
+  position: relative;
+  transition: all 0.3s;
+  width:auto;
+}
+
+/* Style for the input when focused */
+.search-box input:focus {
+  border-color: #3498db; /* Change to your desired focus color */
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2); /* Change to your desired focus box shadow */
+}
+
+/* Style for the input's placeholder text */
+.search-box ::placeholder {
+  color: #000000; /* Adjust the color as needed */
+}
+
+/* Style for the input's icon */
+.search-box input::before {
+  content: "\f002"; /* You can use Font Awesome or other icon fonts */
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: "Font Awesome"; /* Adjust to your icon font family */
+  font-size: 18px; /* Adjust the size as needed */
+  color: #000000; /* Adjust the color as needed */
+}
+
+.search-box input:hover {
+  border-color: #555; /* Change to your desired hover color */
+  background-color: transparent;
+}
+
+/* Hover effect for the input's placeholder text */
+.search-box input:hover::placeholder {
+  color: #000000; /* Change to your desired hover color */
+}
+
+/* Hover effect for the input's icon */
+.search-box input:hover::before {
+  color: #000000; /* Change to your desired hover color */
+}
+
+
+
+
+.button-home {
+  
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgb(0, 0, 0);
+  display: flex;
+ 
+  align-items:center;
+  justify-content: center;
+  color: #000000;
+  transition: all ease-in-out 0.3s;
+  cursor: pointer;
+}
+
+.button-home:hover {
+  
+  transform: scale(1.1);
+}
+
+
+.icon-home {
+  font-size: 30px;
+  font-weight: 5px;
+}
+
+.btn-works {
+  display: inline-block;
+  padding: 0.9rem 1.8rem;
+  font-size: 16px;
+  font-weight: 700;
+  color: white;
+  
+  cursor: pointer;
+  position: relative;
+  background-color: orange;
+  text-decoration: none;
+  overflow: hidden;
+  z-index: 1;
+  font-family: inherit;
+  box-shadow:5px 5px black;
+ }
+ 
+ .btn-works::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(252, 70, 100);
+  transform: translateX(-100%);
+  transition: all .3s;
+  z-index: -1;
+ }
+ 
+ .btn-works:hover::before {
+  transform: translateX(0);
+ }

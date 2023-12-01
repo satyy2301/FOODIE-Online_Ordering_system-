@@ -25,6 +25,7 @@
     margin-bottom: 0px;
     margin-left: auto;
     justify-content: space-evenly;
+    border-radius: 24px;
   }
   
   .team-head-text {
@@ -46,7 +47,7 @@
     max-width: 1380px;
     margin-top: 0px;
     margin-right: auto;
-    margin-bottom: 60px;
+    margin-bottom: 0px;
     margin-left: auto;
     padding-top: 0px;
     padding-right: 30px;

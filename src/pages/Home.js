@@ -5,9 +5,7 @@ import { Link } from "react-router-dom";
 function Home() {
     return ( 
         <Navbar>
-            <ProductList />
-               
-           
+            <ProductList />          
         </Navbar>
      );
 }

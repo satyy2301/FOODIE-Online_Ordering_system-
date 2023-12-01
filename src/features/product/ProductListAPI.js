@@ -37,16 +37,15 @@ export function updateProduct(update) {
 }
 
 export function fetchProductsByFilter(filter, sort, pagination,admin) {
-  // filter = {"category":["smartphone","laptops"]}
-  // sort = {_sort:"price",_order="desc"}
-
- 
-
+  
+  console.log("sdmin : ",admin)
+  console.log("filter : ",filter)
   const { filter: newfilter, sort: sortfilter, pagination: pagefilter } = filter;
 
 
 
-  console.log(filter)
+  console.log("filter : ",filter)
+  console.log("sdmin : ",admin)
   let queryString = '';
   for (let key in newfilter) {
     const categoryValues = newfilter[key];

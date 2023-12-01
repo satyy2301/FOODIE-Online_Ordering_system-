@@ -51,14 +51,13 @@ function AdminOrders() {
     switch (status) {
       case 'pending':
         return 'bg-purple-200 text-purple-600';
-      case 'dispatched':
-        return 'bg-yellow-200 text-yellow-600';
+      
       case 'delivered':
         return 'bg-green-200 text-green-600';
-      case 'cancelled':
-        return 'bg-red-200 text-red-600';
+      case 'paid':
+        return 'bg-red-200 text-purple-600';
       default:
-        return 'bg-purple-200 text-purple-600';
+        return 'bg-purple-200 text-red-600';
     }
   };
 
@@ -68,7 +67,7 @@ function AdminOrders() {
   }, [dispatch, page, sort]);
 
   return (
-    <div className="overflow-x-auto">
+    <div className=" w-auto overflow-x-auto">
       <div className="bg-gray-100 flex items-center justify-center font-sans overflow-hidden">
         <div className="w-full overflow-x-scroll">
           <div className="bg-white shadow-md rounded my-6">
@@ -113,7 +112,7 @@ function AdminOrders() {
                   </th>
 
 
-
+                  <th className="py-3 px-6 text-center">Status</th>
 
                   <th className="py-3 px-6 text-left">Items</th>
                   <th
@@ -134,13 +133,13 @@ function AdminOrders() {
                       ))}
                   </th>
                   {/* <th className="py-3 px-6 text-center">Shipping Address</th> */}
-                  <th className="py-3 px-6 text-center">Status</th>
+                 
                   <th className="py-3 px-6 text-center">Actions</th>
                 </tr>
               </thead>
-              <tbody className="text-gray-600 text-sm font-light">
+              <tbody className="text-gray-600 text-sm font-light w-full">
                 {orders && orders.map((order) => (
-                  <tr key={order.id} className="border-b border-gray-200 hover:bg-gray-100">
+                  <tr key={order.id} className="border-b border-gray-200 hover:bg-gray-100 w-full">
                     <td className="py-3 px-6 text-left whitespace-nowrap">
                       <div className="flex items-center">
                         <div className="mr-2"></div>
@@ -152,6 +151,24 @@ function AdminOrders() {
                         <div className="mr-2"></div>
                         <span className="font-medium">{order.time}</span>
                       </div>
+                    </td>
+                    <td className="py-3 px-6 text-center">
+                      {order.id === editableOrderId ? (
+                        <select onChange={(e) => handleUpdate(e, order)}>
+                          <option value="pending">Pending</option>
+                    
+                          <option value="delivered">Delivered</option>
+                          <option value="paid">Paid</option>
+                        </select>
+                      ) : (
+                        <span
+                          className={`${chooseColor(
+                            order.status
+                          )} py-1 px-3 rounded-full text-xs`}
+                        >
+                          {order.status}
+                        </span>
+                      )}
                     </td>
                     <td className="py-3 px-6 text-left">
                       {order.items.map((item,index) => (
@@ -176,24 +193,7 @@ function AdminOrders() {
                       </div>
                     </td>
                    
-                    <td className="py-3 px-6 text-center">
-                      {order.id === editableOrderId ? (
-                        <select onChange={(e) => handleUpdate(e, order)}>
-                          <option value="pending">Pending</option>
-                          <option value="dispatched">Dispatched</option>
-                          <option value="delivered">Delivered</option>
-                          <option value="cancelled">Cancelled</option>
-                        </select>
-                      ) : (
-                        <span
-                          className={`${chooseColor(
-                            order.status
-                          )} py-1 px-3 rounded-full text-xs`}
-                        >
-                          {order.status}
-                        </span>
-                      )}
-                    </td>
+                   
                     <td className="py-3 px-6 text-center">
                       <div className="flex item-center justify-center">
                         <div className="w-6 mr-4 transform hover:text-purple-500 hover:scale-120">

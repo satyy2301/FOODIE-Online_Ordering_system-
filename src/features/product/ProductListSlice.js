@@ -43,6 +43,11 @@ export const fetchCategoriesAsync = createAsyncThunk(
 export const fetchProductsByFilterAsync=createAsyncThunk(
   'product/fetchAProductsByFilter',
   async (filter,sort,pagination,admin) => {
+    if(admin){
+
+      console.log("admin")
+
+    }
     const response= await fetchProductsByFilter(filter,sort,pagination,admin);
     return response.data;
   }

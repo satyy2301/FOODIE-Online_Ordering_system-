@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Reem Kufi", sans-serif !important;
+  /* font-family: "Reem Kufi", sans-serif !important; */
 }
 img {
   max-width: 100%;
@@ -10,9 +10,10 @@ img {
 }
 .App-landing {
   min-height: 100vh;
-  width: 85vw;
+  width:100%;
   max-width: 1900px;
   margin: 0rem auto;
+  
 }
 body {
   max-width: 100%;
@@ -64,6 +65,7 @@ body {
   position: relative;
   display: flex;
   padding-top: 3rem;
+  padding-left: 3rem;
 }
 .home-bannerImage-container {
   position: absolute;

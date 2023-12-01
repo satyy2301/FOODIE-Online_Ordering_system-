@@ -5,7 +5,8 @@ import "./AdminUserList.css";
 import { fetchAllUsersAsync, selectAllusers } from "../../user/userSlice";
 
 const AdminUserList = () => {
-  const users=useSelector(selectAllusers);
+  const sortedUsers=useSelector(selectAllusers);
+  const users = [...sortedUsers].sort((a, b) => b.points - a.points);
   const dispatch = useDispatch();
   
   useEffect(() => {
@@ -38,13 +39,13 @@ const AdminUserList = () => {
         {users && users.map((user)=> (
           <div
             key={user.id}
-            className="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 card-container bg-white shadow-md hover:shadow-lg transition-transform transform hover:scale-105 hover:rotate-2"
+            className="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 card-container bg-white rounded-2xl shadow-md hover:shadow-lg transition-transform transform hover:scale-105 hover:rotate-2 "
           >
             <div className="card">
               <div className="team-image-wrapper flex items-center justify-center">
                 <img
                   className="mb-10 top-5 h-20 w-20 rounded-full relative flex max-w-xs items-center rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 transition-transform transform scale-100 hover:scale-110 hover:bg-gray-700 hover:ring-4 hover:ring-white hover:ring-opacity-50"
-                  src={user.imageUrl}
+                  src="https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671142.jpg?size=626&ext=jpg"
                   alt=""
                 />
               </div>
@@ -53,7 +54,13 @@ const AdminUserList = () => {
                   User ID: {user.id ? user.id : "New User"}
                 </h5>
                 <p className="profile-mail text-gray-600 mb-4">
-                  Email Address: {user.email}
+                  Name: {user.name}
+                </p>
+                <p className="profile-mail text-gray-600 mb-4">
+                  Email : {user.email}
+                </p>
+                <p className="profile-mail text-gray-600 mb-4">
+                  Contact: {user.contact}
                 </p>
 
                 <div className="mt-3">
@@ -63,7 +70,7 @@ const AdminUserList = () => {
                 </div>
               </div>
 
-              <div className="social-icons mt-5">
+              {/* <div className="social-icons mt-5">
                 <a
                   href="https://www.twitter.com"
                   target="_blank"
@@ -86,7 +93,7 @@ const AdminUserList = () => {
                     alt="Facebook Icon"
                   />
                 </a>
-              </div>
+              </div> */}
             </div>
           </div>
         ))}

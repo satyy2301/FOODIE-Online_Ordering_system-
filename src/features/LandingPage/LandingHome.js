@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 const LandingHome = () => {
   return (
     <div className="home-container">
-      {/* <Navbar /> */}
+      <Navbar />
       <div className="home-banner-container">
         <div className="home-bannerImage-container">
           <img src={BannerBackground} alt="" />

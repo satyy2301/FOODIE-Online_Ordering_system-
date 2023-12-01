@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Sidebar({ openSidebarToggle, OpenSidebar }) {
   return (
@@ -80,7 +81,7 @@ function Sidebar({ openSidebarToggle, OpenSidebar }) {
 
       <ul className="sidebar-list">
         <li className="sidebar-list-item">
-          <a href="#" style={{ display: "flex", alignItems: "center" }}>
+          <Link to="/home" style={{ display: "flex", alignItems: "center" }}>
             <img
               src="/businesses-dashboard-.svg"
               alt="Dashboard Icon"
@@ -88,11 +89,11 @@ function Sidebar({ openSidebarToggle, OpenSidebar }) {
               height="30"
               style={{ verticalAlign: "middle", marginRight: "15px" }}
             />
-            Dashboard
-          </a>
+             Products
+          </Link>
         </li>
         <li className="sidebar-list-item">
-          <a href="./AdminHome.js" style={{ display: "flex", alignItems: "center" }}>
+          <Link to="/admin/users" style={{ display: "flex", alignItems: "center" }}>
             <img
               src="/create-a-picture-of-junk-food.svg"
               alt="Dashboard Icon"
@@ -100,11 +101,11 @@ function Sidebar({ openSidebarToggle, OpenSidebar }) {
               height="30"
               style={{ verticalAlign: "middle", marginRight: "15px" }}
             />
-            Products
-          </a>
+            Customers
+          </Link>
         </li>
         <li className="sidebar-list-item">
-          <a href="" style={{ display: "flex", alignItems: "center" }}>
+          <Link to="/admin/orders" style={{ display: "flex", alignItems: "center" }}>
             <img
               src="/menu-category.svg"
               alt="Dashboard Icon"
@@ -112,11 +113,11 @@ function Sidebar({ openSidebarToggle, OpenSidebar }) {
               height="30"
               style={{ verticalAlign: "middle", marginRight: "15px" }}
             />
-           Categories
-          </a>
+          Orders
+          </Link>
         </li>
         <li className="sidebar-list-item">
-          <a href="" style={{ display: "flex", alignItems: "center" }}>
+          <Link to="/admin" style={{ display: "flex", alignItems: "center" }}>
             <img
               src="/customers.svg"
               alt="Dashboard Icon"
@@ -124,22 +125,11 @@ function Sidebar({ openSidebarToggle, OpenSidebar }) {
               height="30"
               style={{ verticalAlign: "middle", marginRight: "15px" }}
             />
-           Customers
-          </a>
+           Edit Product
+          </Link>
         </li>
-        <li className="sidebar-list-item">
-          <a href="" style={{ display: "flex", alignItems: "center" }}>
-            <img
-              src="/a-tall-fridge-next-to-a-shopping-basket.svg"
-              alt="Dashboard Icon"
-              width="30"
-              height="30"
-              style={{ verticalAlign: "middle", marginRight: "15px" }}
-            />
-            Inventory
-          </a>
-        </li>
-        <li className="sidebar-list-item">
+       
+        {/* <li className="sidebar-list-item">
           <a href="" style={{ display: "flex", alignItems: "center" }}>
             <img
               src="/reports.svg"
@@ -162,7 +152,7 @@ function Sidebar({ openSidebarToggle, OpenSidebar }) {
             />
            Settings
           </a>
-        </li>
+        </li> */}
       </ul>
     </aside>
   );

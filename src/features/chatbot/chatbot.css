@@ -1,0 +1,185 @@
+/* Chat card styling */
+@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@600&family=Nova+Square&family=Roboto+Slab:wght@500&display=swap');
+
+/* Parent chat styling */
+.parent-chat {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  transition: transform 0.3s ease-in-out;
+  width: 80%; /* Adjust the width as needed */
+  max-width: 800px; /* You can keep the max-width for responsiveness */
+  height: 500px; /* Adjust the height as needed */
+}
+
+.parent-chat.show-chat {
+  transform: translateY(0); /* Bring chatbot to view */
+}
+
+/* Chat card styling */
+.chat-card {
+  width: 100%;
+  max-width: 100%; /* Adjust the max-width for responsiveness */
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  animation: chatAnimation 0.3s ease-in-out;
+  height: 100%; /* Set the height of the chatbot container */
+}
+
+/* Header styling */
+.chat-header {
+  padding: 20px;
+  background-color: #4285f4;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+}
+
+/* Header h2 styling */
+.chat-header .h2 {
+  font-size: 16px;
+  margin: 0;
+  font-family: 'Roboto Slab', serif;
+  opacity: 0; /* Set initial opacity to 0 */
+  animation: fadeInAnimation 1s ease-in-out forwards; 
+}
+
+/* Body styling */
+.chat-body {
+  max-height: calc(100% - 120px); /* Adjusted max-height to accommodate footer */
+  overflow-y: auto;
+  padding: 15px;
+  scroll-behavior: smooth; /* Enable smooth scrolling */
+}
+
+/* Message styling */
+.message {
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  max-width: 70%;
+}
+
+.incoming {
+  background-color: #e1e1e1;
+  align-self: flex-start;
+}
+
+.outgoing {
+  background-color: #6fa3f8;
+  color: white;
+  align-self: flex-end;
+}
+
+/* Message text styling */
+.message p {
+  font-size: 14px;
+  color: #333;
+  margin: 0;
+}
+
+/* Footer styling */
+/* Footer styling */
+.chat-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  background-color: #f2f2f2;
+  display: flex;
+  align-items: center;
+}
+
+/* Other styles remain unchanged */
+
+
+.input-chat {
+  flex-grow: 1;
+  border: none;
+  outline: none;
+  border-radius: 15px;
+  padding: 15px;
+  background-color: #ccc;
+  box-shadow: inset 2px 5px 10px rgba(19, 192, 219, 0.3);
+  transition: 300ms ease-in-out;
+  width: calc(100% - 42px);
+}
+
+.input-chat:focus {
+  background-color: white;
+  transform: scale(1.05);
+  box-shadow: 13px 13px 100px #969696,
+             -13px -13px 100px #ffffff;
+}
+
+/* Button styling */
+.chat-footer button {
+  padding: 8px 12px; /* Adjusted padding for a smaller button */
+  border: none;
+  background-color: #4285f4;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border-radius: 5px;
+}
+
+/* Hover effect for the button */
+.chat-footer button:hover {
+  background-color: #0f9d58;
+}
+
+/* Tooltip styling */
+.tooltip {
+  position: absolute;
+  top: -30px; /* Adjusted top position */
+  opacity: 0;
+  background-color: #4285f4;
+  color: #fff;
+  padding: 5px 8px; /* Adjusted padding for a smaller tooltip */
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.5s;
+  pointer-events: none;
+  letter-spacing: 0.5px;
+}
+
+/* Hover effect for the tooltip */
+.chat-card:hover .tooltip {
+  opacity: 1;
+}
+
+.button-chat {
+  color: #ecf0f1;
+  font-size: 17px;
+  background-color: #001e96;
+  border: 1px solid #1225f3;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0px 6px 0px #00158a;
+  transition: all .1s;
+}
+
+.button-chat:active {
+  box-shadow: 0px 2px 0px #a34e15;
+  position: relative;
+  top: 2px;
+}
+
+@keyframes fadeInAnimation {
+  from {
+    opacity: 0; /* Start with opacity 0 */
+  }
+  to {
+    opacity: 1; /* End with opacity 1 */
+  }
+}

@@ -10,24 +10,18 @@ import { useSelector } from "react-redux";
 import { selectItems } from "../Cart/CartSlice";
 import { selectLoggedInUser } from "../auth/authSlice";
 import "./Navbar.css";
-
+// import Chatbot from "../chatbotbox/chatbot";
 
 const navigation = [
- 
-  { name: "Admin", link: "/admin", admin: true },
+  { name: "Products", link: "/home", user: true },
+  { name: "Team", link: "#", user: true },
+  { name: "Product", link: "/admin", admin: true },
   { name: "Orders", link: "/admin/orders", admin: true },
-  { name: "Chat", link: "/chatbot", admin: true, user: true },
+  { name: "Users", link: "/admin/users", admin: true },
+  { name: "Dashboard", link: "/admin/dash", admin: true },
+  { name: "Chat", link: "/chatbot", admin: true, user:true },
 
-  {
-    name: "Customers",
-    link: "/admin/users",
-    admin: true,
-  },
-  {
-    name: "Sales",
-    link: "/admin/dash",
-    admin: true,
-  },
+  
 ];
 const userNavigation = [
   { name: "My Profile", link: "/profile" },
@@ -44,11 +38,11 @@ function Navbar({ children }) {
 
   return (
     <>
-      <nav className="navbar h-auto w-full">
-        <div 
+      <nav className="navbar h-full w-full">
+        <div
           className="h-auto w-full "
           style={{
-            backgroundImage: "url('/bgall.svg')",
+            backgroundImage: "url(/homebg.svg)",
             minHeight: "100vh",
             minWidth: "100vh",
             backgroundSize: "cover",
@@ -68,17 +62,29 @@ function Navbar({ children }) {
                         id="animation-demo"
                         className="flex-shrink-0 animated fadeInUp "
                       >
-                        <Link to="/home" className="flex items-center space-x-2 w-auto h-auto ">
-                          <button className="button-home block relative left-0 w-auto h-auto  ml-0">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 1024 1024" stroke-width="0" fill="white" stroke="currentColor" className="icon-home p-2">
+                        <Link
+                          to="/"
+                          className="flex items-center space-x-2 w-auto h-auto "
+                        >
+                          <button className="button-home bloack relative left-0 w-auto h-auto  ml-0">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="1em"
+                              height="1em"
+                              viewBox="0 0 1024 1024"
+                              stroke-width="0"
+                              fill="white"
+                              stroke="currentColor"
+                              className="icon-home p-2"
+                            >
                               <path d="M946.5 505L560.1 118.8l-25.9-25.9a31.5 31.5 0 0 0-44.4 0L77.5 505a63.9 63.9 0 0 0-18.8 46c.4 35.2 29.7 63.3 64.9 63.3h42.5V940h691.8V614.3h43.4c17.1 0 33.2-6.7 45.3-18.8a63.6 63.6 0 0 0 18.7-45.3c0-17-6.7-33.1-18.8-45.2zM568 868H456V664h112v204zm217.9-325.7V868H632V640c0-22.1-17.9-40-40-40H432c-22.1 0-40 17.9-40 40v228H238.1V542.3h-96l370-369.7 23.1 23.1L882 542.3h-96.1z"></path>
                             </svg>
                           </button>
-                          <div className="container-parent mt-5">
-                            <div className="text-container">
-                              <div className="upper css-3d-text">FOODIE</div>
-                              <div className="lower css-3d-text">FOODIE</div>
-                              <div className="inside">LIFE</div>
+                          <div class="container-parent mt-5">
+                            <div class="text-container">
+                              <div class="upper css-3d-text">FOODIE</div>
+                              <div class="lower css-3d-text">FOODIE</div>
+                              <div class="inside">LIFE</div>
                             </div>
                           </div>
                         </Link>
@@ -86,24 +92,24 @@ function Navbar({ children }) {
                     </div>
 
                     <div className="hidden md:block">
-                    <div className="ml-auto  flex items-baseline space-x-4">
+                      <div className="ml-auto  flex items-baseline space-x-4">
                         {navigation.map((item) =>
                           item[user.role] ? (
                             <Link
                               key={item.name}
                               to={item.link}
                               className={classNames(
-                                "rounded-md ml-auto px-3 py-2 text-sm font-bold bg-black",
+                                "rounded-md ml-auto px-3 py-2 text-sm font-bold",
                                 {
                                   "bg-gray-900 text-white": item.current,
-                                  "text-gray-300 hover:bg-gray-700 hover:text-white": !item.current,
+                                  "text-gray-300 hover:bg-gray-700 hover:text-white":
+                                    !item.current,
                                 },
                                 "lg:mx-2 lg:my-0 md:mx-1 md:my-0 sm:mx-0 sm:my-1"
                               )}
                               aria-current={item.current ? "page" : undefined}
                             >
-                              <div className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">{item.name}</div>
-                              {/* {item.name} */}
+                              <p class="btn-works">{item.name}</p>
                             </Link>
                           ) : null
                         )}
@@ -182,7 +188,7 @@ function Navbar({ children }) {
                             <span className="sr-only">Open user menu</span>
                             <img
                               className="h-8 w-8 rounded-full"
-                              src="https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671142.jpg?size=626&ext=jpg"
+                              src={user.imageUrl}
                               alt=""
                             />
                           </Menu.Button>
@@ -240,11 +246,10 @@ function Navbar({ children }) {
                 <Disclosure.Panel className="md:hidden bg-white">
                   <div className="space-y-2 px-4 pb-4 pt-2 sm:px-6">
                     {navigation.map((item) => (
-                       <Link to={item.link}>
                       <Disclosure.Button
                         key={item.name}
-
-                      
+                        as="a"
+                        href={item.href}
                         className={classNames(
                           item.current
                             ? "bg-gray-900 text-white"
@@ -254,8 +259,7 @@ function Navbar({ children }) {
                         aria-current={item.current ? "page" : undefined}
                       >
                         {item.name}
-                       
-                      </Disclosure.Button> </Link>
+                      </Disclosure.Button>
                     ))}
                   </div>
                   <div className="border-t border-gray-200 pb-4 pt-4">
@@ -296,7 +300,6 @@ function Navbar({ children }) {
                     </div>
                     <div className="mt-3 space-y-2 px-4">
                       {userNavigation.map((item) => (
-                        <Link to={item.link}>
                         <Disclosure.Button
                           key={item.name}
                           as="a"
@@ -304,7 +307,7 @@ function Navbar({ children }) {
                           className="block rounded-md px-4 py-2 text-base font-medium text-gray-600 hover:bg-gray-100 hover:text-gray-900 transition duration-300 ease-in-out transform hover:scale-105"
                         >
                           {item.name}
-                        </Disclosure.Button></Link>
+                        </Disclosure.Button>
                       ))}
                     </div>
                   </div>
@@ -313,13 +316,13 @@ function Navbar({ children }) {
             )}
           </Disclosure>
 
-          {/* <header
+          <header
             className="bg-white shadow-md py-2 check dash-board relative"
             style={{ backgroundImage: "url(/dash.svg)" }}
           >
             <div className="ml-10 flex ">
               <h1 className="text-3xl   m-4 font-bold text-indigo-600 tracking-tight transform transition-transform hover:scale-105 hover:text-indigo-800">
-                
+                {/* <Link to={Chatbot}></Link> */}
                 Dashboard
               </h1>
             </div>
@@ -338,10 +341,10 @@ function Navbar({ children }) {
                 <button className="btn ml-4">Search</button>
               </div>
             </form>
-          </header> */}
+          </header>
 
           <main>
-          <div class=" w-full  flex items-center justify-center mt-4"> 
+          <div class=" w-full  flex items-center justify-center">
               {children}
             </div>
           </main>

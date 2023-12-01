@@ -21,7 +21,7 @@ import {
 import {  useSelector } from "react-redux/es/hooks/useSelector";
 import { selectTotalCategories, selectTotalItems } from "../../product/ProductListSlice";
 import { fetchAdminOrdersAsync, fetchAllOrdersAsync, selectAdminOrders, selectOrders, selectTotalOrders } from "../../order/orderSlice";
-import { fetchAllUsersAsync, selectAllusers, selecttotalusers } from "../../user/userSlice";
+import { fetchAllUsersAsync, selecttotalusers } from "../../user/userSlice";
 import { useDispatch } from "react-redux";
 import { fetchAllUsers } from "../../user/UserAPI";
 
@@ -35,7 +35,7 @@ const calculateMonthlySales = (orders) => {
   return Object.entries(monthlySalesData).map(([month, totalAmount]) => ({ name: month, totalAmount }));
 };
 
-// Function to calculate hourly sales
+
 const calculateHourlySales = (orders) => {
   const today = new Date().toISOString().slice(0, 10);
 
@@ -47,12 +47,12 @@ const calculateHourlySales = (orders) => {
       return result;
     }, {});
 
-  // Convert the object to an array of { hour, totalAmount } and sort it by hour
+ 
   return Object.entries(hourlySalesData)
     .map(([hour, totalAmount]) => ({ hour, totalAmount }))
     .sort((a, b) => a.hour - b.hour);
 };
-// Function to calculate daily sales
+
 const calculateDailySales = (orders) => {
   const dailySalesData = orders.reduce((result, order) => {
     const day = order.time.slice(0, 10);
@@ -64,7 +64,7 @@ const calculateDailySales = (orders) => {
   .map(([day, totalAmount]) => ({ name: day, totalAmount }))
   .sort((a, b) => new Date(a.name) - new Date(b.name));
 };
-// Component to display LineChart
+
 const LineChartComponent = ({ data, dataKey, color }) => {
   return (
     <ResponsiveContainer width="100%" height={300}>
@@ -83,7 +83,7 @@ const LineChartComponent = ({ data, dataKey, color }) => {
   );
 };
 
-// Component to display BarChart
+
 const BarChartComponent = ({ data, dataKey, color }) => {
   return (
     <ResponsiveContainer width="100%" height={300}>
@@ -119,17 +119,13 @@ function Dashboard() {
   const hourlySalesData = calculateHourlySales(orders);
   const dailySalesData = calculateDailySales(orders);
 
-
-
-
-
   useEffect(() => {
     
          dispatch(fetchAllOrdersAsync()); 
          dispatch(fetchAllUsersAsync());
          dispatch(fetchAdminOrdersAsync())
       
-     }, [dispatch,orders]);
+     }, [dispatch]);
     
 
   return (
@@ -179,15 +175,16 @@ function Dashboard() {
         {/* <div className="salecard">
           $ {totalSales}
         </div> */}
-        <div className="plot">
-          <h2>Monthly Sale</h2>
-           <LineChartComponent data={monthlySalesData} dataKey="totalAmount" color="#8884d8" /></div>
+       
         <div className="plot">
         <h2>Hourly Sale</h2>
           <BarChartComponent data={hourlySalesData} dataKey="totalAmount" color="#82ca9d" /></div>
         <div className="plot">
         <h2>Daily Sale</h2>
            <LineChartComponent data={dailySalesData} dataKey="totalAmount" color="#8884d8" /></div>
+           <div className="plot">
+          <h2>Monthly Sale</h2>
+           <LineChartComponent data={monthlySalesData} dataKey="totalAmount" color="#8884d8" /></div>
       </div>
 
     </main>

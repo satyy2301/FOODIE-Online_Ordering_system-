@@ -38,7 +38,7 @@ export default function Cart() {
 
     const handleRazorpayPayment = () => {
     const rzp = new window.Razorpay({
-      key: "rzp_test_K5QtQTV0PmJilH", // Replace with your actual Razorpay key
+      key: "rzp_test_iyGnqSIPee8Y1X", // Replace with your actual Razorpay key
       amount: totalAmount * 100, // Convert amount to paise
       currency: "INR",
       name: "JIIT Cafe",
@@ -53,9 +53,8 @@ export default function Cart() {
           totalItems,
           user:user.id,
           status: "pending",
-          // razorpayPaymentId: response.razorpay_payment_id,
-          // razorpayOrderId: response.razorpay_order_id,
-          // razorpaySignature: response.razorpay_signature,
+          razorpayPaymentId: response.razorpay_payment_id,
+          
         };
 
         dispatch(createOrderAsync(order));
@@ -86,7 +85,7 @@ export default function Cart() {
   }
   return (
     <>
-      {!items.length && <Navigate to="/" replace={true}></Navigate>}
+      {!items.length && <Navigate to="/home" replace={true}></Navigate>}
       {currentOrder && (
         <Navigate
           to={`/order-success/${currentOrder.id}`}
@@ -94,11 +93,11 @@ export default function Cart() {
         ></Navigate>
       )}
       <div
-        className="mx-auto mt-12  cart-box px-4 sm:px-6 lg:px-8 rounded-md"
-        style={{ backgroundImage: "url(/cartbg.jpg)" }}
+        className="mx-auto cart-box px-4 sm:px-6 lg:px-8 rounded-5xl"
+        // style={{ backgroundImage: "url(/cartbg.jpg)" }}
       >
-        <div className="m-10 border-t bg-white border-gray-300 rounded-md px-4 py-6 sm:px-6">
-          <h2 className="text-3xl font-semibold text-green-700 mb-4">
+        <div className="m-5 border-gray-300 rounded-5xl px-4 py-6 sm:px-6">
+          <h2 className="text-4xl font-bold text-grey-700 mb-4">
             Your Cart{" "}
           </h2>
           <div className="flow-root mt-4  ">
@@ -108,7 +107,7 @@ export default function Cart() {
                   key={item.id}
                   className="flex py-4 bg-white rounded-lg shadow-md hover:shadow-lg my-4"
                 >
-                  <div className=" ml-4 mt-4 h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-green-400">
+                  <div className=" ml-4 mt-4 h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-blue-400">
                     <img
                       src={item.product.thumbnail}
                       alt={item.product.title}
@@ -117,17 +116,17 @@ export default function Cart() {
                   </div>
 
                   <div className="ml-4 flex flex-1 flex-col justify-between ">
-                    <div className="flex justify-between text-lg font-semibold text-green-900">
+                    <div className="flex justify-between text-lg font-semibold text-blue-900">
                       <h3>
                         <Link
                           to={item.href}
-                          className="text-green-700 hover:underline"
+                          className="text-blue-700 hover:underline"
                         >
                           {item.title}
                         </Link>
                       </h3>
                       <div className="mr-14 p-4text-right">
-                        <p className="text-green-700 font-semibold">
+                        <p className="text-bluen-700 font-semibold">
                           $ {item.product.price}
                         </p>
                         <p className="text-sm text-gray-500">{item.color}</p>
@@ -137,14 +136,14 @@ export default function Cart() {
                       <div className=" mb-6 text-gray-500">
                         <label
                           htmlFor="quantity"
-                          className="inline text-sm font-medium text-green-900"
+                          className="inline text-sm font-medium text-blue-900"
                         >
                           Qty
                         </label>
                         <select
                           onChange={(e) => handleQuantity(e, item)}
                           value={item.quantity}
-                          className=" block w-16 rounded border border-green-300 focus:border-green-600 focus:ring focus:ring-green-200 focus:ring-opacity-50 transition-transform hover:scale-105 duration-300 text-lg text-green-700 p-2 transform origin-center"
+                          className=" block w-16 rounded border border-blue-300 focus:border-blue-600 focus:ring focus:ring-blue-200 focus:ring-opacity-50 transition-transform hover:scale-105 duration-300 text-lg text-blue-700 p-2 transform origin-center"
                         >
                           <option value="1">1</option>
                           <option value="2">2</option>
@@ -171,10 +170,10 @@ export default function Cart() {
         </div>
 
         <div className="border-t bg-white m-3 border-gray-300 px-4 py-6 sm:px-6 rounded-md transition-transform duration-300 hover:shadow-lg">
-          <div className="flex flex-col sm:flex-row justify-between text-lg font-semibold text-green-700 mb-4">
+          <div className="flex flex-col sm:flex-row justify-between text-lg font-semibold text-grey-700 mb-4">
             <div>
               <p>Subtotal</p>
-              <p className="text-green-900">$ {totalAmount}</p>
+              <p className="text-grey-900">$ {totalAmount}</p>
             </div>
             <div>
               <p>Total Items in Cart</p>
@@ -184,7 +183,7 @@ export default function Cart() {
           <div className="mt-6">
           <div
           onClick={handleRazorpayPayment}
-          className="flex items-center justify-center rounded-md border border-green-700 bg-green-700 px-6 py-3 text-lg font-semibold text-white shadow-sm hover:bg-green-800 cursor-pointer transition-transform hover:scale-105 duration-300"
+          className="flex items-center justify-center rounded-md border border-blue-700 bg-blue-700 px-6 py-3 text-lg font-semibold text-white shadow-sm hover:bg-blue-800 cursor-pointer transition-transform hover:scale-105 duration-300"
         >
               <div style={{ width: "20px" }} className="mr-4">
                 <svg
@@ -204,12 +203,12 @@ export default function Cart() {
               Proceed to Checkout
             </div>
           </div>
-          <div className="mt-6 flex justify-center text-center text-base text-green-700">
+          <div className="mt-6 flex justify-center text-center text-base text-blue-700">
             <p>
               <Link to="/">
                 <button
                   type="button"
-                  className="text-green-700 hover:text-green-800 focus:outline-none transition-transform hover:scale-105 duration-300"
+                  className="text-blue-700 hover:text-blue-800 focus:outline-none transition-transform hover:scale-105 duration-300"
                   onClick={() => setOpen(false)}
                 >
                   Continue Shopping <span aria-hidden="true"> &rarr;</span>
